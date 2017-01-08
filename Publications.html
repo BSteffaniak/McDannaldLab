@@ -17,7 +17,7 @@
                     <h3>{{ publication.header }}</h3>
                     <p ng-bind-html="publication.html"></p>
                     <a ng-href="{{ publication.fileUrl }}" download="{{ publication.fileUrl }}" style="display: inline-block;">
-                        <button>Download</button>
+                        [{{ publication.fileType }}]
                     </a>
                 </div>
             </div>
