@@ -4,19 +4,11 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', function (
     $stateProvider.state("/", {
             redirectTo: "/Home"
         }).state("Home", {
-            url: "Home",
-            views: {
-                '': {
-                    templateUrl: "Home.html"
-                }
-            }
+            url: "/Home",
+            templateUrl: "Home.html"
         }).state("Publications", {
-            url: "Publications",
-            views: {
-                '': {
-                    templateUrl: "Publications.html",
-                    controller: "PublicationsController"
-                }
-            }
+            url: "/Publications",
+            templateUrl: "Publications.html",
+            controller: "PublicationsController"
         });
 }]);
