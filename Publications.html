@@ -1,0 +1,21 @@
+<html>
+<head>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/App.js"></script>
+    <script src="Scripts/PublicationsController.js"></script>
+</head>
+<body ng-app="lab">
+    test
+    
+    <div ng-controller="PublicationsController">
+        <ul>
+            <li ng-repeat="publication in publications">
+                {{ publication.header }}
+                <a ng-href="{{ publication.fileUrl }}" download="{{ publication.fileUrl }}" style="display: inline-block;">
+                    <button>Download</button>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
