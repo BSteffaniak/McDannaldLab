@@ -13,7 +13,7 @@ var publications = [
     },
 ];
 
-app.controller("PublicationsController", ["$scope", "$sce", function ($scope, $sce) {
+angular.module("lab").controller("PublicationsController", ["$scope", "$sce", function ($scope, $sce) {
     $scope.publications = publications;
     $scope.years = [];
     
