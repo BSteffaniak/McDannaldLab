@@ -40,6 +40,7 @@ angular.module("lab").controller("PublicationsController", ["$scope", "$sce", fu
             pub.html = $sce.trustAsHtml(pub.description);
             
             pub.fileType = pub.fileType || pub.fileUrl.substring(pub.fileUrl.lastIndexOf('.') + 1);
+            pub.filename = pub.filename || pub.fileUrl.substring(pub.fileUrl.lastIndexOf('/') + 1);
             
             if ($scope.years.indexOf(year) < 0) {
                 $scope.years.push(year);
