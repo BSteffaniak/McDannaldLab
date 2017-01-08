@@ -13,5 +13,11 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', function (
         }).state("People", {
             url: "/People",
             templateUrl: "People.html"
+        }).state("Resources", {
+            url: "/Resources",
+            templateUrl: "Resources.html"
+        }).state("Contact", {
+            url: "/Contact",
+            templateUrl: "Contact.html"
         });
 }]);
