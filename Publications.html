@@ -2,7 +2,7 @@
     Search: <input type="text" ng-model="search" />
     <div ng-repeat="year in years | orderBy:true:true">
         <h2 ng-bind="year"></h2>
-        <div ng-repeat="publication in publicationsFromYear(year) | orderBy:'time' | filter:search">
+        <div ng-repeat="publication in publicationsFromYear(year) | orderBy:'time':true | filter:search">
             <h3>{{ publication.header }}</h3>
             <p ng-bind-html="publication.html"></p>
             <a ng-href="{{ publication.fileUrl }}" download="{{ publication.fileUrl }}" style="display: inline-block;">
