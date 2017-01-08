@@ -10,5 +10,8 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', function (
             url: "/Publications",
             templateUrl: "Publications.html",
             controller: "PublicationsController"
+        }).state("People", {
+            url: "/People",
+            templateUrl: "People.html"
         });
 }]);
