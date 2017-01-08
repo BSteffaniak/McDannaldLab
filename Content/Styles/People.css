@@ -1,0 +1,12 @@
+table.people tr td {
+    padding: 0;
+}
+
+table.people tr td p {
+    margin: 0;
+}
+
+img.person {
+    height: 220px;
+    margin-right: 30px;
+}
