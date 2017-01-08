@@ -1,26 +1,13 @@
-<html>
-    <head>
-        <script src="Scripts/angular.min.js"></script>
-        <script src="Scripts/moment.js"></script>
-        <script src="Scripts/util.js"></script>
-        <script src="Scripts/App.js"></script>
-        <script src="Scripts/PublicationsController.js"></script>
-    </head>
-    <body ng-app="lab">
-        test
-        
-        <div ng-controller="PublicationsController">
-            Search: <input type="text" ng-model="search" />
-            <div ng-repeat="year in years | orderBy:true:true">
-                <h2 ng-bind="year"></h2>
-                <div ng-repeat="publication in publicationsFromYear(year) | orderBy:'time' | filter:search">
-                    <h3>{{ publication.header }}</h3>
-                    <p ng-bind-html="publication.html"></p>
-                    <a ng-href="{{ publication.fileUrl }}" download="{{ publication.fileUrl }}" style="display: inline-block;">
-                        [{{ publication.fileType }}]
-                    </a>
-                </div>
-            </div>
+<div ng-controller="PublicationsController">
+    Search: <input type="text" ng-model="search" />
+    <div ng-repeat="year in years | orderBy:true:true">
+        <h2 ng-bind="year"></h2>
+        <div ng-repeat="publication in publicationsFromYear(year) | orderBy:'time' | filter:search">
+            <h3>{{ publication.header }}</h3>
+            <p ng-bind-html="publication.html"></p>
+            <a ng-href="{{ publication.fileUrl }}" download="{{ publication.fileUrl }}" style="display: inline-block;">
+                [{{ publication.fileType }}]
+            </a>
         </div>
-    </body>
-</html>
+    </div>
+</div>
