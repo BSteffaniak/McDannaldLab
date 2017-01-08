@@ -1,12 +1,16 @@
 <html>
-<head>
-    <script src="Scripts/angular.min.js"></script>
-    <script src="Scripts/App.js"></script>
-    <script src="Scripts/RouteConfig.js"></script>
-</head>
-<body ng-app="lab">
-    index
-    
-    <a href="Publications.html">pubs</a>
-</body>
+    <head>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/angular-ui-router.min.js"></script>
+        <script src="Scripts/moment.js"></script>
+        <script src="Scripts/util.js"></script>
+        <script src="Scripts/App.js"></script>
+        <script src="Scripts/RouteConfig.js"></script>
+        <script src="Scripts/PublicationsController.js"></script>
+    </head>
+    <body ng-app="lab">
+        index
+        <div ui-view></div>
+        <a href="Publications.html">pubs</a>
+    </body>
 </html>
