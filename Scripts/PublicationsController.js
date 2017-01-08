@@ -11,6 +11,12 @@ var publications = [
         fileUrl: 'Publications/asdf2.txt',
         description: '<b>asdfasdfasdfsadfdfdfdasdfa</b>'
     },
+    {
+        header: 'Something',
+        date: '01/08/2017',
+        fileUrl: 'Publications/asdf2.pdf',
+        description: '<b><a href="http://www.google.com">google</a></b>'
+    },
 ];
 
 angular.module("lab").controller("PublicationsController", ["$scope", "$sce", function ($scope, $sce) {
