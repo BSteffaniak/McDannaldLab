@@ -1,1 +1,1 @@
-var app = angular.module("lab", []);
+angular.module("lab", ["ui.router"]);
