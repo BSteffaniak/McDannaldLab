@@ -9,7 +9,7 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', function (
         }).state("publications", {
             url: "/publications",
             templateUrl: "publications.html",
-            controller: "publicationsController"
+            controller: "PublicationsController"
         }).state("people", {
             url: "/people",
             templateUrl: "people.html"
