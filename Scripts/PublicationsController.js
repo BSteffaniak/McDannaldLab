@@ -2,19 +2,19 @@ var publications = [
     {
         header: 'Asdf test',
         date: '01/20/2016',
-        fileUrl: 'Publications/asdf.txt',
+        fileUrl: 'publications/asdf.txt',
         description: '<b>asdfasdfasdfasdfa</b>'
     },
     {
         header: 'Asdf test2',
         date: '01/07/2017',
-        fileUrl: 'Publications/asdf2.txt',
+        fileUrl: 'publications/asdf2.txt',
         description: '<b>asdfasdfasdfsadfdfdfdasdfa</b>'
     },
     {
         header: 'Something',
         date: '01/08/2017',
-        fileUrl: 'Publications/asdf2.pdf',
+        fileUrl: 'publications/asdf2.pdf',
         description: '<b><a href="http://www.google.com">google</a></b>'
     },
 ];

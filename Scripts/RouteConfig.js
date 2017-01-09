@@ -1,23 +1,23 @@
 angular.module("lab").config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/Home");
+    $urlRouterProvider.otherwise("/home");
     
     $stateProvider.state("/", {
-            redirectTo: "/Home"
-        }).state("Home", {
-            url: "/Home",
-            templateUrl: "Home.html"
-        }).state("Publications", {
-            url: "/Publications",
-            templateUrl: "Publications.html",
-            controller: "PublicationsController"
-        }).state("People", {
-            url: "/People",
-            templateUrl: "People.html"
-        }).state("Resources", {
-            url: "/Resources",
-            templateUrl: "Resources.html"
-        }).state("Contact", {
-            url: "/Contact",
-            templateUrl: "Contact.html"
+            redirectTo: "/home"
+        }).state("home", {
+            url: "/home",
+            templateUrl: "home.html"
+        }).state("publications", {
+            url: "/publications",
+            templateUrl: "publications.html",
+            controller: "publicationsController"
+        }).state("people", {
+            url: "/people",
+            templateUrl: "people.html"
+        }).state("resources", {
+            url: "/resources",
+            templateUrl: "resources.html"
+        }).state("contact", {
+            url: "/contact",
+            templateUrl: "contact.html"
         });
 }]);
