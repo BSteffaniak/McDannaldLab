@@ -32,4 +32,9 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', function (
             url: "/resources/protocols",
             templateUrl: "resources/protocols.html"
         });
+}]).run(['$rootScope', function ($rootScope) {
+    $rootScope.$on("$stateChangeStart", function (e, state, params, fromState, fromParams) {
+        $rootScope.state = state;
+        $rootScope.stateParams = params;
+    });
 }]);
