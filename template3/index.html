@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>acceler - Free CSS Template by ZyPOP</title>
+        <link rel="stylesheet" href="styles.css" type="text/css" />
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <!--
+        acceler, a free CSS web template by ZyPOP (zypopwebtemplates.com/)
+
+        Download: http://zypopwebtemplates.com/
+
+        License: Creative Commons Attribution
+        //-->
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/slider.js"></script>
+        <script type="text/javascript" src="js/superfish.js"></script>
+
+        <script type="text/javascript" src="js/custom.js"></script>
+
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+        
+        <link rel="stylesheet" type="text/css" href="/content/styles/global.css" />
+      
+        <script src="/scripts/angular.min.js"></script>
+        <script src="/scripts/angular-ui-router.min.js"></script>
+        <script src="/scripts/moment.js"></script>
+        <script src="/scripts/util.js"></script>
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/routeConfig.js"></script>
+        <script src="/scripts/publicationsController.js"></script>
+        <script src="/scripts/peopleController.js"></script>
+    </head>
+    <body ng-app="lab">
+        <div id="container">
+
+            <header>
+        	<div class="width">
+            		<h3><a ui-sref="{{template}}/home">Mike McDannald Lab</a></h3>
+
+        		    <nav>
+        	
+            			<ul class="sf-menu dropdown">
+                	<li ng-class="{ selected: state.name == 'home' }"><a ui-sref="{{template}}/home">Home</a></li>
+                    <li ng-class="{ selected: state.name == 'people' }"><a ui-sref="{{template}}/people">People</a></li>
+        	        <li ng-class="{ selected: state.name == 'publications' }"><a ui-sref="{{template}}/publications">Publications</a></li>
+                    <li ng-class="{ selected: state.name == 'resources' }"><a class="has_submenu" ui-sref="{{template}}/resources">Resources</a>
+                    	<ul>
+                        	<li><a ui-sref="{{template}}/resources/behavior">Behavior programs</a></li>
+                            <li><a ui-sref="{{template}}/resources/analysis">Analysis programs</a></li>
+                            <li><a ui-sref="{{template}}/resources/ardbark">Ardbark</a></li>
+                            <li><a ui-sref="{{template}}/resources/protocols">Protocols</a></li>
+                        </ul>
+                    </li>
+                    <li ng-class="{ selected: state.name == 'contact' }"><a ui-sref="{{template}}/contact">Contact</a></li>
+                </ul>
+        	
+            			</nav>
+               	</div>
+
+        	<div class="clear"></div>
+
+            <div id="slides-container" class="slides-container width">
+                <div id="slides">
+                    <div>
+                        
+                            <h2>Tristique sem vitae metus ornare </h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque venenatis sagittis enim. Maecenas ligula erat, egestas congue, varius nec, sagittis nec, purus. In neque.</p>
+                                          	
+        			<p style="text-align:center;"><a href="#" class="button button-slider">Lorem ipsum dolor</a></p>
+                            
+
+                    
+                        
+                    </div>
+                    
+                
+        	
+        	 <div>
+                    	<h2>Have fun with slides!</h2>
+                        <p>These slides can contain anything a webpage can! HTML, Javascript, images, flash or whatever! They're completely easy to edit and add to as well, no need to bother editing or even going anywhere near some confusing Javascript files, simply add a &lt;div&gt;&lt;/div&gt; tag with your slider content to the "slides" container and an extra slide control - it takes just seconds to do!</p>
+                        
+                    </div>
+         
+                 
+        		</div>
+                <div class="controls"><span class="jFlowNext"><span>Next</span></span><span class="jFlowPrev"><span>Prev</span></span></div>        
+                <div id="myController" class="hidden">
+        		<!-- COPY AND PASTE SLIDE CONTROL FOR EACH NEW SLIDE -->
+        		<span class="jFlowControl">Slide 1</span>
+        		<span class="jFlowControl">Slide 2</span>
+        	</div>
+            </div>
+
+
+            </header>
+
+
+
+
+            <div id="body" class="width">
+                <div ui-view></div>
+                
+            	<div class="clear"></div>
+            </div>
+            <footer>
+                <div class="footer-content width">
+                    <ul>
+                    	<li><h4>Proin accumsan</h4></li>
+                        <li><a href="#">Rutrum nulla a ultrices</a></li>
+                        <li><a href="#">Blandit elementum</a></li>
+                        <li><a href="#">Proin placerat accumsan</a></li>
+                        <li><a href="#">Morbi hendrerit libero </a></li>
+                        <li><a href="#">Curabitur sit amet tellus</a></li>
+                    </ul>
+                    
+                    <ul>
+                    	<li><h4>Condimentum</h4></li>
+                        <li><a href="#">Curabitur sit amet tellus</a></li>
+                        <li><a href="#">Morbi hendrerit libero </a></li>
+                        <li><a href="#">Proin placerat accumsan</a></li>
+                        <li><a href="#">Rutrum nulla a ultrices</a></li>
+                        <li><a href="#">Cras dictum</a></li>
+                    </ul>
+
+         	    <ul>
+                        <li><h4>Suspendisse</h4></li>
+                        <li><a href="#">Morbi hendrerit libero </a></li>
+                        <li><a href="#">Proin placerat accumsan</a></li>
+                        <li><a href="#">Rutrum nulla a ultrices</a></li>
+                        <li><a href="#">Curabitur sit amet tellus</a></li>
+                        <li><a href="#">Donec in ligula nisl.</a></li>
+                    </ul>
+                    
+                    <ul class="endfooter">
+                    	<li><h4>Suspendisse</h4></li>
+                        <li>Integer mattis blandit turpis, quis rutrum est. Maecenas quis arcu vel felis lobortis iaculis fringilla at ligula. Nunc dignissim porttitor dolor eget porta. </li>
+                    </ul>
+                    
+                    <div class="clear"></div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; YourSite 2014. <a href="http://zypopwebtemplates.com/">Free HTML5 Templates</a> by ZyPOP</p>
+                 </div>
+            </footer>
+        </div>
+    </body>
+</html>
