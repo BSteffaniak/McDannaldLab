@@ -1,36 +1,43 @@
-angular.module("lab").config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    if(window.history && window.history.pushState) {
+        $locationProvider.html5Mode({
+            enabled : true,
+            requireBase : false
+        }).hashPrefix('');
+    }
+    
     $urlRouterProvider.otherwise("/home");
     
     $stateProvider.state("/", {
             redirectTo: "/home"
         }).state("home", {
             url: "/home",
-            templateUrl: "home.html"
+            templateUrl: "/home.html"
         }).state("publications", {
             url: "/publications",
-            templateUrl: "publications.html",
+            templateUrl: "/publications.html",
             controller: "PublicationsController"
         }).state("people", {
             url: "/people",
-            templateUrl: "people.html"
+            templateUrl: "/people.html"
         }).state("resources", {
             url: "/resources",
-            templateUrl: "resources.html"
+            templateUrl: "/resources.html"
         }).state("contact", {
             url: "/contact",
-            templateUrl: "contact.html"
+            templateUrl: "/contact.html"
         }).state("resources/behavior", {
             url: "/resources/behavior",
-            templateUrl: "resources/behavior.html"
+            templateUrl: "/resources/behavior.html"
         }).state("resources/analysis", {
             url: "/resources/analysis",
-            templateUrl: "resources/analysis.html"
+            templateUrl: "/resources/analysis.html"
         }).state("resources/ardbark", {
             url: "/resources/ardbark",
-            templateUrl: "resources/ardbark.html"
+            templateUrl: "/resources/ardbark.html"
         }).state("resources/protocols", {
             url: "/resources/protocols",
-            templateUrl: "resources/protocols.html"
+            templateUrl: "/resources/protocols.html"
         });
 }]).run(['$rootScope', function ($rootScope) {
     $rootScope.$on("$stateChangeStart", function (e, state, params, fromState, fromParams) {
