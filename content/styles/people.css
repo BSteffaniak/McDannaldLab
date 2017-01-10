@@ -6,6 +6,10 @@ table.people tr td p {
     margin: 0;
 }
 
+table.people {
+    margin-top: 25px;
+}
+
 table tr td.person-content {
     padding-left: 30px;
 }
