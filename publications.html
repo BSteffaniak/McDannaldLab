@@ -3,7 +3,7 @@
     <div style="text-align: right;">Search: <input style="margin-right: 6px;" type="text" ng-model="search" /></div>
     <div ng-repeat="year in years | orderBy:true:true">
         <hr>
-        <h2 ng-bind="year"></h2>
+        <h2 class="year" ng-bind="year"></h2>
         <div class="publication" ng-repeat="publication in publicationsFromYear(year) | orderBy:'time':true | filter:search">
             <h3>
                 {{ publication.header }}
