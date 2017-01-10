@@ -1,21 +1,15 @@
 <link rel="stylesheet" type="text/css" href="content/styles/people.css" />
-<div>
+<div ng-controller="PeopleController">
     <table class="people">
-        <tr>
+        <tr ng-repeat="person in people">
             <td>
-                <img class="person" src="content/images/mike.jpg" />
+                <img class="person" ng-src="{{ person.imageUrl }}" />
             </td>
             <td>
-                <h4>Mike McDannald</h4>
-                <br>
-                <p>Title 1</p>
-                <p>Title n</p>
-                <br>
-                <p>
-                    Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description.... 
-                </p>
-                <br>
-                <p><a href="mailto:mcdannald@gmail.com">Email</a> / asdfas / asdfsadfasdf</p>
+                <h4 ng-bind="person.name"></h4><br>
+                <p ng-repeat="title in person.titles" ng-bind="title"></p><br>
+                <p ng-bind="person.description"></p><br>
+                <p><a ng-if="person.email" ng-href="mailto:{{person.email}}">Email</a> <span ng-if="person.cvUrl">/ <a ng-href="{{ person.cvUrl }}">CV</a></span></p>
             </td>
         </tr>
     </table>
