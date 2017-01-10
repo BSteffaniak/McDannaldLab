@@ -50,6 +50,24 @@ angular.module("lab").controller("PublicationsController", ["$scope", "$sce", fu
     $scope.publications = publications;
     $scope.years = [];
     
+    var searchColumns = ["header", "searchText"];
+    
+    $scope.search = function (input) {
+        if ($scope.searchValue) {
+            var searches = $scope.searchValue.toLowerCase().split(/\s+/g)
+            
+            return searchColumns.find(function (column) {
+                var value = input[column].toLowerCase();
+                
+                return searches.filter(function (search) {
+                    return value.indexOf(search) >= 0;
+                }).length == searches.length;
+            });
+        } else {
+            return true;
+        }
+    };
+    
     $scope.publicationsFromYear = function (year) {
         return $scope.publications.filter(function (d) {
             return d.year == year;
@@ -65,6 +83,7 @@ angular.module("lab").controller("PublicationsController", ["$scope", "$sce", fu
             pub.time = +d;
             pub.year = year;
             pub.html = $sce.trustAsHtml(pub.description);
+            pub.searchText = getTextFromNode(pub.description || "");
             
             pub.fileType = pub.fileType || pub.fileUrl.substring(pub.fileUrl.lastIndexOf('.') + 1);
             pub.filename = pub.filename || pub.fileUrl.substring(pub.fileUrl.lastIndexOf('/') + 1);
