@@ -6,6 +6,14 @@ var people = [
         email: "michael.mcdannald@bc.edu",
         imageUrl: "content/images/mike.jpg",
         cvUrl: "resources/people/",
+    },
+    {
+        name: "John Marriott",
+        titles: ["Title 1", "Title 123"],
+        description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
+        email: "marriott@gmail.com",
+        imageUrl: "content/images/JohnMarriott.jpg",
+        cvUrl: "resources/people/",
     }
 ];
 
