@@ -23,3 +23,19 @@ function getTextFromNode(node, addSpaces) {
     }
     return result;
 }
+
+function fuzzySearch(input, searchValue, searchColumns) {
+    if (searchValue) {
+        var searches = searchValue.toLowerCase().split(/\s+/g)
+        
+        return searchColumns.find(function (column) {
+            var value = input[column].toLowerCase();
+            
+            return searches.filter(function (search) {
+                return value.indexOf(search) >= 0;
+            }).length == searches.length;
+        });
+    } else {
+        return true;
+    }
+}

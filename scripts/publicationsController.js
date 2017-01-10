@@ -53,19 +53,7 @@ angular.module("lab").controller("PublicationsController", ["$scope", "$sce", fu
     var searchColumns = ["header", "searchText"];
     
     $scope.search = function (input) {
-        if ($scope.searchValue) {
-            var searches = $scope.searchValue.toLowerCase().split(/\s+/g)
-            
-            return searchColumns.find(function (column) {
-                var value = input[column].toLowerCase();
-                
-                return searches.filter(function (search) {
-                    return value.indexOf(search) >= 0;
-                }).length == searches.length;
-            });
-        } else {
-            return true;
-        }
+        return fuzzySearch(input, $scope.searchValue, searchColumns);
     };
     
     $scope.publicationsFromYear = function (year) {
