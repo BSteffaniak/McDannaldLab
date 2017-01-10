@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Mike McDannald Lab</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+        
+  <link rel="stylesheet" type="text/css" href="/content/styles/global.css" />
+
+  <script src="/scripts/angular.min.js"></script>
+  <script src="/scripts/angular-ui-router.min.js"></script>
+  <script src="/scripts/moment.js"></script>
+  <script src="/scripts/util.js"></script>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/routeConfig.js"></script>
+  <script src="/scripts/publicationsController.js"></script>
+  <script src="/scripts/peopleController.js"></script>
+</head>
+
+<body ng-app="lab">
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Mike McDannald Lab <span class="logo_colour">Boston College</span></a></h1>
+          <h2>Simple. Contemporary. Website Template.</h2>
+        </div>
+      </div>
+      <nav>
+        <div id="menu_container">
+          <ul class="sf-menu" id="nav">
+            <li><a ui-sref="{{template}}/home">Home</a></li>
+            <li><a ui-sref="{{template}}/people">People</a></li>
+            <li><a ui-sref="{{template}}/publications">Publications</a></li>
+            <li><a ui-sref="{{template}}/resources">Resources</a>
+              <ul>
+                <li><a ui-sref="{{template}}/resources/behavior">Behavior programs</a></li>
+                <li><a ui-sref="{{template}}/resources/analysis">Analysis programs</a></li>
+                <li><a ui-sref="{{template}}/resources/ardbark">Ardbark</a></li>
+                <li><a ui-sref="{{template}}/resources/protocols">Protocols</a></li>
+              </ul>
+            </li>
+            <li><a ui-sref="{{template}}/contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div class="content" ui-view>
+      </div>
+    </div>
+    <div id="scroll">
+      <a title="Scroll to the top" class="top" href="#"><img src="images/top.png" alt="top" /></a>
+    </div>
+    <footer>
+      <p><img src="images/twitter.png" alt="twitter" />&nbsp;<img src="images/facebook.png" alt="facebook" />&nbsp;<img src="images/rss.png" alt="rss" /></p>
+      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.php">Contact Us</a></p>
+      <p>Copyright &copy; CSS3_contrast | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
+    </footer>
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+    });
+  </script>
+</body>
+</html>
