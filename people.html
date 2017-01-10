@@ -2,10 +2,10 @@
 <div ng-controller="PeopleController">
     <table class="people">
         <tr ng-repeat="person in people">
-            <td>
+            <td class="person-image">
                 <img class="person" ng-src="{{ person.imageUrl }}" />
             </td>
-            <td>
+            <td class="person-content">
                 <h4 ng-bind="person.name"></h4><br>
                 <p ng-repeat="title in person.titles" ng-bind="title"></p><br>
                 <p ng-bind="person.description"></p><br>
