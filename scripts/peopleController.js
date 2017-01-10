@@ -11,7 +11,7 @@ var people = [
         name: "John Marriott",
         titles: ["Title 1", "Title 123"],
         description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
-        email: "marriott@gmail.com",
+        email: "asdfasdf@gmail.com",
         imageUrl: "content/images/JohnMarriott.jpg",
         cvUrl: "resources/people/",
     }
