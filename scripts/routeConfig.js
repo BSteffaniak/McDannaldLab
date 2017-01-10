@@ -28,43 +28,19 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$location
             url: "resources/protocols"
         }];
     
-    // $urlRouterProvider.otherwise("home");
-    var location = window.location.pathname.substring(1);
+    $urlRouterProvider.otherwise("home");
     
-    if (location.indexOf("template") == 0) {
-        var end = location.indexOf('/');
-        end = end > 0 ? end : location.length;
-        
-        location = location.substring(0, end);
-        
-        var state = "home";
-        
-        if (window.location.hash) {
-            state = window.location.hash.substring(7);
-        }
-        
-        $urlRouterProvider.otherwise(location + "/" + state);
-        
-        pages.forEach(function (page) {
-            $stateProvider.state(location + '/' + page.url, {
-                url: '/' + location + '/' + page.url,
-                templateUrl: '/' + page.url + '.html',
-                controller: page.controller
-            });
+    $stateProvider.state("/", {
+        redirectTo: "home"
+    });
+    
+    pages.forEach(function (page) {
+        $stateProvider.state(page.url, {
+            url: '/' + page.url,
+            templateUrl: '/' + page.url + '.html',
+            controller: page.controller
         });
-    }
-    
-    // $stateProvider.state("/template2", {
-    //     redirectTo: "template2/home"
-    // });
-    
-    // pages.forEach(function (page) {
-    //     $stateProvider.state(page.url, {
-    //         url: '/' + page.url,
-    //         templateUrl: '/' + page.url + '.html',
-    //         controller: page.controller
-    //     });
-    // });
+    });
 }]).run(['$rootScope', function ($rootScope) {
     $rootScope.$on("$stateChangeStart", function (e, state, params, fromState, fromParams) {
         $rootScope.state = {name: state.templateUrl.substring(1, state.templateUrl.length - 5)};//state;
@@ -72,15 +48,4 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$location
         
         console.log(state);
     });
-    
-    var location = window.location.pathname.substring(1);
-    
-    if (location.indexOf("template") == 0) {
-        var end = location.indexOf('/');
-        end = end > 0 ? end : location.length;
-        
-        location = location.substring(0, end);
-        
-        $rootScope.template = location;
-    }
 }]);
