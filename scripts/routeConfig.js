@@ -6,42 +6,87 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$location
         }).hashPrefix('');
     }
     
-    $urlRouterProvider.otherwise("/home");
+    // $urlRouterProvider.otherwise("home");
+    var location = window.location.pathname.substring(1);
     
-    $stateProvider.state("/", {
-            redirectTo: "/home"
-        }).state("home", {
-            url: "/home",
-            templateUrl: "/home.html"
-        }).state("publications", {
-            url: "/publications",
-            templateUrl: "/publications.html",
+    if (location.indexOf("template") == 0) {
+        var end = location.indexOf('/');
+        end = end > 0 ? end : location.length;
+        
+        location = location.substring(0, end);
+        
+        var state = "home";
+        
+        if (window.location.hash) {
+            state = window.location.hash.substring(7);
+        }
+        
+        $urlRouterProvider.otherwise(location + "/" + state);
+    }
+    
+    var pages = [{
+            url: "home"
+        }, {
+            url: "publications",
             controller: "PublicationsController"
-        }).state("people", {
-            url: "/people",
-            templateUrl: "/people.html"
-        }).state("resources", {
-            url: "/resources",
-            templateUrl: "/resources.html"
-        }).state("contact", {
-            url: "/contact",
-            templateUrl: "/contact.html"
-        }).state("resources/behavior", {
-            url: "/resources/behavior",
-            templateUrl: "/resources/behavior.html"
-        }).state("resources/analysis", {
-            url: "/resources/analysis",
-            templateUrl: "/resources/analysis.html"
-        }).state("resources/ardbark", {
-            url: "/resources/ardbark",
-            templateUrl: "/resources/ardbark.html"
-        }).state("resources/protocols", {
-            url: "/resources/protocols",
-            templateUrl: "/resources/protocols.html"
+        }, {
+            url: "people",
+            controller: "PeopleController"
+        }, {
+            url: "resources"
+        }, {
+            url: "contact"
+        }, {
+            url: "resources/behavior"
+        }, {
+            url: "resources/analysis"
+        }, {
+            url: "resources/ardbark"
+        }, {
+            url: "resources/protocols"
+        }];
+    
+    // $stateProvider.state("/template2", {
+    //     redirectTo: "template2/home"
+    // });
+    
+    // pages.forEach(function (page) {
+    //     $stateProvider.state(page.url, {
+    //         url: '/' + page.url,
+    //         templateUrl: '/' + page.url + '.html',
+    //         controller: page.controller
+    //     });
+    // });
+    pages.forEach(function (page) {
+        $stateProvider.state('template1/' + page.url, {
+            url: '/template1/' + page.url,
+            templateUrl: '/' + page.url + '.html',
+            controller: page.controller
         });
+    });
+    pages.forEach(function (page) {
+        $stateProvider.state('template2/' + page.url, {
+            url: '/template2/' + page.url,
+            templateUrl: '/' + page.url + '.html',
+            controller: page.controller
+        });
+    });
 }]).run(['$rootScope', function ($rootScope) {
     $rootScope.$on("$stateChangeStart", function (e, state, params, fromState, fromParams) {
-        $rootScope.state = state;
+        $rootScope.state = {name: state.templateUrl.substring(1, state.templateUrl.length - 5)};//state;
         $rootScope.stateParams = params;
+        
+        console.log(state);
+        
+        var location = window.location.pathname.substring(1);
+        
+        if (location.indexOf("template") == 0) {
+            var end = location.indexOf('/');
+            end = end > 0 ? end : location.length;
+            
+            location = location.substring(0, end);
+            
+            $rootScope.template = location;
+        }
     });
 }]);
