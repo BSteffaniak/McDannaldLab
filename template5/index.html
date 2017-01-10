@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html>
+
+    <head>
+      <title>Free HTML5 Templates</title>
+      <meta name="description" content="website description" />
+      <meta name="keywords" content="website keywords, website keywords" />
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+      <link rel="stylesheet" type="text/css" href="css/style.css" />
+      <!-- modernizr enables HTML5 elements and feature detects -->
+      <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="/content/styles/global.css" />
+      
+        <script src="/scripts/angular.min.js"></script>
+        <script src="/scripts/angular-ui-router.min.js"></script>
+        <script src="/scripts/moment.js"></script>
+        <script src="/scripts/util.js"></script>
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/routeConfig.js"></script>
+        <script src="/scripts/publicationsController.js"></script>
+        <script src="/scripts/peopleController.js"></script>
+    </head>
+
+    <body ng-app="lab">
+  <div id="main">
+    
+	<header>
+	  
+	  <div id="header_section">	  
+	    
+		<div id="welcome">
+	      <h2>Mike McDannald Lab</h2>
+	    </div><!--close welcome-->			  	
+	  
+	    <nav>
+          <ul id="nav">
+            <li ng-class="{ current: state.name == 'home' }"><a ui-sref="{{template}}/home">Home</a></li>
+            <li ng-class="{ current: state.name == 'people' }"><a ui-sref="{{template}}/people">People</a></li>
+            <li ng-class="{ current: state.name == 'publications' }"><a ui-sref="{{template}}/publications">Publications</a></li>
+            <li ng-class="{ current: state.name == 'resources' }"><a ui-sref="{{template}}/resources">Resources</a></li>
+            <li ng-class="{ current: state.name == 'contact' }"><a ui-sref="{{template}}/contact">Contact</a></li>
+          </ul>
+        </nav>
+      
+	  </div>		
+	
+	</header>
+    
+	<div id="site_content">		
+	
+	  <div id="content" ui-view>
+		
+	  </div><!--close content-->   
+	
+	</div><!--close site_content-->  	
+  
+    <footer>
+	  <a href="index.html">Home</a> | <a href="ourwork.html">Our Work</a> | <a href="testimonials.html">Testimonials</a> | <a href="projects.html">Projects</a> | <a href="contact.html">Contact</a><br/><br/>
+	  website template by <a href="http://www.freehtml5templates.co.uk">Free HTML5 Templates</a>
+    </footer> 
+  
+  </div><!--close main-->
+  
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  
+</body>
+</html>
