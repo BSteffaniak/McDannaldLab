@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="content/styles/publications.css" />
 <div ng-controller="PublicationsController">
-    <div style="text-align: right;">Search: <input style="margin-right: 6px;" type="text" ng-model="searchValue" /></div>
+    <div style="text-align: right;">Search: <input type="text" ng-model="searchValue" /></div>
     <div ng-repeat="year in years | orderBy:'-'">
         <hr>
         <h2 class="year" ng-bind="year"></h2>
