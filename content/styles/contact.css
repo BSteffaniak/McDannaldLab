@@ -1,17 +1,17 @@
-img {
+#content img {
     border-radius: 5px;
     margin-right: 35px;
 }
 
-img.icon {
+#content img.icon {
     border-radius: 0;
     margin: 0;
 }
 
-table {
+#content table {
     margin: 0;
 }
 
-table tr td {
+#content table tr td {
     padding: 5px 0;
 }
