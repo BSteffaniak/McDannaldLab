@@ -39,3 +39,7 @@ function fuzzySearch(input, searchValue, searchColumns) {
         return true;
     }
 }
+
+function setFont(font) {
+    document.body.style.fontFamily = font;
+}

@@ -1,4 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Pontano+Sans);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Padauk);
+@import url(https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Rubik);
 
 body {
 	background: #fff;
@@ -148,7 +158,6 @@ span.required {
 h1 {
 	color: #000;
 	font-size: 35px;
-	font-family: 'Pontano Sans', Arial, sans-serif;
 }
 
 h2 {
@@ -158,7 +167,6 @@ h2 {
 	font-weight: normal;
 	padding: 0 0 5px;
 	margin: 0;
-	font-family: 'Pontano Sans', Arial, sans-serif;
 }
 
 h3 {
@@ -167,12 +175,10 @@ h3 {
 	font-weight: normal;
 	margin-bottom: 10px;
 	letter-spacing: -1px;
-	font-family: 'Pontano Sans', Arial, sans-serif;
 }
 
 h4 {
-    font-family: 'Pontano Sans', Arial, sans-serif;
-    color: #FF6D29;
+    color: #00A0EB;
     font-size: 18px;
     font-weight: normal;
     padding-bottom: 10px;
@@ -258,7 +264,6 @@ nav ul li {
 nav ul li a {
     color: #999;
     display: block;
-    font-family: 'Pontano Sans',Arial,sans-serif;
     font-size: 13px;
     letter-spacing: 0;
    margin: 0;
