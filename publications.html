@@ -6,7 +6,7 @@
     <div class="publication" ng-repeat="publication in publicationsFromYear(year) | orderBy:'time':true | filter:search">
         <p>
             {{ publication.header }}
-            <a class="download" ng-href="{{ publication.fileUrl }}" download="{{ publication.filename }}" style="display: inline-block;">
+            <a class="download" ng-href="{{ publication.fileUrl }}" download="{{ publication.filename }}" style="display: inline-block;" target="_blank">
                 [{{ publication.fileType }}]
             </a>
         </p>
