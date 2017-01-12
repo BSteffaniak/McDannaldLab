@@ -4,12 +4,12 @@
     <hr>
     <h2 class="year" ng-bind="year"></h2>
     <div class="publication" ng-repeat="publication in publicationsFromYear(year) | orderBy:'time':true | filter:search">
-        <h3 style="color: black;">
+        <p>
             {{ publication.header }}
             <a class="download" ng-href="/{{ publication.fileUrl }}" download="/{{ publication.filename }}" style="display: inline-block;">
                 [{{ publication.fileType }}]
             </a>
-        </h3>
+        </p>
         <p ng-bind-html="publication.html"></p>
     </div>
 </div>
