@@ -18,3 +18,12 @@
     margin-bottom: 0px;
     padding-bottom: 0px;
 }
+
+#content .copyright p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#content .copyright h5 {
+    padding-bottom: 3px;
+}
