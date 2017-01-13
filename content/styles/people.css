@@ -8,6 +8,7 @@ table.people tr td p {
 
 table.people {
     margin-top: 25px;
+    width: 60%;
 }
 
 table tr td.person-content {
@@ -15,8 +16,8 @@ table tr td.person-content {
 }
 
 .person-image {
-    width: 220px;
-    height: 220px;
+    width: 210px;
+    height: 210px;
     overflow: hidden;
     position: relative;
     
@@ -32,4 +33,10 @@ img.person {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+}
+
+#content .titles,
+#content .description,
+#content .links  {
+    margin-top: 5px;
 }
