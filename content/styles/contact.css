@@ -15,3 +15,7 @@
 #content table tr td {
     padding: 5px 0;
 }
+
+#content p {
+    margin-bottom: 0;
+}
