@@ -1,1 +1,1 @@
-angular.module("lab", ["ui.router"]);
+angular.module("lab", ["ui.router", "uiRouterStyles"]);

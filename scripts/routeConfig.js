@@ -7,17 +7,21 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$location
     }
     
     var pages = [{
-            url: "home"
+            url: "home",
+            css: "/content/styles/home.css"
         }, {
             url: "publications",
+            css: "/content/styles/publications.css",
             controller: "PublicationsController"
         }, {
             url: "people",
+            css: "/content/styles/people.css",
             controller: "PeopleController"
         }, {
             url: "resources"
         }, {
-            url: "contact"
+            url: "contact",
+            css: "/content/styles/contact.css"
         }, {
             url: "resources/behavior"
         }, {
@@ -38,7 +42,10 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$location
         $stateProvider.state(page.url, {
             url: '/' + page.url,
             templateUrl: '/' + page.url + '.html',
-            controller: page.controller
+            controller: page.controller,
+            data: {
+                css: page.css
+            }
         });
     });
 }]).run(['$rootScope', function ($rootScope) {
