@@ -8,11 +8,35 @@ var people = [
         cvUrl: "resources/people/",
     },
     {
-        name: "John Marriott",
+        name: "Mahsa Moaddab",
         titles: ["Title 1", "Title 123"],
         description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
         email: "asdfasdf@gmail.com",
         imageUrl: "/content/images/JohnMarriott.jpg",
+        cvUrl: "resources/people/",
+    },
+    {
+        name: "Rachel Zacharias",
+        titles: ["Title 1", "Title 123"],
+        description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
+        email: "asdfasdf@gmail.com",
+        imageUrl: "/content/images/JohnMarriott2.jpg",
+        cvUrl: "resources/people/",
+    },
+    {
+        name: "Kristina Wright",
+        titles: ["Title 1", "Title 123"],
+        description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
+        email: "asdfasdf@gmail.com",
+        imageUrl: "/content/images/JohnMarriott3.jpg",
+        cvUrl: "resources/people/",
+    },
+    {
+        name: "Madelyn Ray",
+        titles: ["Title 1", "Title 123"],
+        description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
+        email: "asdfasdf@gmail.com",
+        imageUrl: "/content/images/JohnMarriott4.jpg",
         cvUrl: "resources/people/",
     }
 ];
