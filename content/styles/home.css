@@ -4,12 +4,11 @@
 
 .images {
     vertical-align: top;
-    
-    padding-top: 30px;
 }
 
 .images img {
     display: block;
     
     margin: 25px;
+    margin-top: 90px;
 }
