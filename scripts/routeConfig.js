@@ -4,6 +4,13 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$location
             enabled : true,
             requireBase : false
         }).hashPrefix('');
+        
+        window.originalPathname = window.originalPathname.replace(/\/$/, "");
+        window.history.replaceState(null, null, window.originalPathname + window.originalQueryString + window.originalHash);
+        
+        window.originalPathname = null;
+        window.originalQueryString = null;
+        window.originalHash = null;
     }
     
     var pages = [{
