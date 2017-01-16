@@ -15,6 +15,12 @@ html, body, #container, #body {
     margin: 0 auto;
 }
 
+.question {
+    margin-left: 20px;
+    
+    font-style: italic;
+}
+
 #container {
     padding-left: calc(100vw - 100%);
 }
