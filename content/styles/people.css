@@ -8,7 +8,7 @@ table.people tr td p {
 
 table.people {
     margin-top: 25px;
-    width: 65%;
+    width: 100%;
 }
 
 table tr td.person-content {
@@ -24,9 +24,27 @@ table tr td.person-content {
     border-radius: 5px;
 }
 
+span.title > span {
+    margin: 0px 5px;
+    
+    font-weight: bold;
+    
+    font-size: 14px;
+}
+
+span.titles {
+    font-size: 15px;
+    
+    margin-left: 10px;
+    
+    color: #666;
+    
+    position: relative;
+    bottom: 0.5px;
+}
+
 img.person {
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
     
     position: absolute;
     
