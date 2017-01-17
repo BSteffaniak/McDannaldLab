@@ -2,7 +2,7 @@ var people = [
     {
         name: "Mike McDannald",
         titles: ["Title 1", "Title n"],
-        description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
+        description: "Mike received his in B.A. in Neuroscience from the University of Illinois at Urbana-Champaign. He did is graduate work with Peter Holland at Johns Hopkins and his postdoc with Geoffrey Schoenbaum at the University of Maryland School of Medicine and the National Institute on  Drug Abuse. He started his lab at Boston College in the summer of 2014.",
         email: "michael.mcdannald@bc.edu",
         imageUrl: "/content/images/mike.jpg",
         cvUrl: "content/cv/McDannald CV.pdf",
