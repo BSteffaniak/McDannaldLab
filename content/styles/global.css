@@ -15,6 +15,18 @@ html, body, #container, #body {
     margin: 0 auto;
 }
 
+h1 {
+    margin-bottom: 10px;
+}
+
+.home-aligned {
+    margin-left: 38px;
+}
+
+.home-aligned.symmetrical {
+    margin-right: 38px;
+}
+
 .question {
     margin-left: 20px;
     
