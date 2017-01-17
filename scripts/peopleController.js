@@ -5,7 +5,7 @@ var people = [
         description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
         email: "michael.mcdannald@bc.edu",
         imageUrl: "/content/images/mike.jpg",
-        cvUrl: "resources/people/",
+        cvUrl: "content/cv/McDannald CV.pdf",
     },
     {
         name: "Mahsa Moaddab",
@@ -20,7 +20,7 @@ var people = [
         titles: ["Title 1", "Title 123"],
         description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
         email: "asdfasdf@gmail.com",
-        imageUrl: "/content/images/JohnMarriott2.jpg",
+        imageUrl: "/content/images/RachelZacharias.jpg",
         cvUrl: "resources/people/",
     },
     {
