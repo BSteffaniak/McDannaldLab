@@ -19,10 +19,6 @@ table {
 	text-align: left;
 }
 
-th, td {
-	padding: 10px 10px;
-}
-
 th {
 	color: #666;
 	background: #ccc none repeat-x scroll left top;
