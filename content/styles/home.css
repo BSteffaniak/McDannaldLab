@@ -6,6 +6,10 @@
     margin-top: 30px;
 }
 
+.blurb {
+    text-align: justify;
+}
+
 /*table#home-content td:first-of-type {
     vertical-align: top;
     
