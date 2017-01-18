@@ -25,6 +25,10 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$location
             css: "/content/styles/people.css",
             controller: "PeopleController"
         }, {
+            url: "people2",
+            css: "/content/styles/people.css",
+            controller: "PeopleController"
+        }, {
             url: "resources"
         }, {
             url: "contact",
