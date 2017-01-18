@@ -8,6 +8,10 @@
 
 .blurb {
     text-align: justify;
+    
+    font-size: 18px;
+    
+    width: 68%;
 }
 
 /*table#home-content td:first-of-type {
@@ -23,11 +27,11 @@
 .images img {
     display: block;
     
-    margin: 25px;
+    margin: 25px auto;
     margin-bottom: 40px;
     margin-top: 0px;
 }
 
 .images {
-    padding-top: 30px;
+    padding-top: 20px;
 }
