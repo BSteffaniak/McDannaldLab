@@ -41,6 +41,8 @@ span.titles {
     
     position: relative;
     bottom: 0.5px;
+    
+    text-transform: capitalize;
 }
 
 img.person {
