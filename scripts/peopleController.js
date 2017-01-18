@@ -2,7 +2,7 @@ var people = [
     {
         name: "Mike McDannald",
         titles: [],
-        description: "Mike received his in B.A. in Neuroscience from the University of Illinois at Urbana-Champaign. He did is graduate work with Peter Holland at Johns Hopkins and his postdoc with Geoffrey Schoenbaum at the University of Maryland School of Medicine and the National Institute on  Drug Abuse. He started his lab at Boston College in the summer of 2014.",
+        description: 'Mike received his in B.A. in Neuroscience from the University of Illinois at Urbana-Champaign. He did is Ph.D. with Peter Holland at Johns Hopkins and his postdoc with Geoffrey Schoenbaum at the University of Maryland School of Medicine and the National Institute on Drug Abuse. Mike joined the <a href="http://www.bc.edu/schools/cas/psych">Psychology Department at Boston College</a> the summer of 2014.',
         email: "michael.mcdannald@bc.edu",
         imageUrl: "/content/images/mike.jpg",
         cvUrl: "content/cv/McDannald CV.pdf",
@@ -10,7 +10,7 @@ var people = [
     {
         name: "Mahsa Moaddab",
         titles: ["Postdoctoral Fellow"],
-        description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
+        description: 'Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....',
         email: "asdfasdf@gmail.com",
         imageUrl: "/content/images/JohnMarriott.jpg",
         cvUrl: "resources/people/",
@@ -18,7 +18,7 @@ var people = [
     {
         name: "Rachel Zacharias",
         titles: ["Graduate Student"],
-        description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
+        description: 'Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....',
         email: "asdfasdf@gmail.com",
         imageUrl: "/content/images/RachelZacharias.jpg",
         cvUrl: "resources/people/",
@@ -26,7 +26,7 @@ var people = [
     {
         name: "Kristina Wright",
         titles: ["Graduate Student"],
-        description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
+        description: 'Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....',
         email: "asdfasdf@gmail.com",
         imageUrl: "/content/images/JohnMarriott3.jpg",
         cvUrl: "resources/people/",
@@ -34,7 +34,7 @@ var people = [
     {
         name: "Madelyn Ray",
         titles: ["Graduate Student"],
-        description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
+        description: 'Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....',
         email: "asdfasdf@gmail.com",
         imageUrl: "/content/images/MadelynRay.jpg",
         cvUrl: "resources/people/",
@@ -71,6 +71,8 @@ angular.module("lab").controller("PeopleController", ["$scope", "$sce", function
             
             img.src = p.imageUrl;
             
+            p.html = $sce.trustAsHtml(p.description);
+            p.searchText = getTextFromNode(p.description || "");
             p.cvName = p.cvUrl ? p.cvUrl.substring(p.cvUrl.lastIndexOf('/') + 1) : "";
         });
     }, false);
