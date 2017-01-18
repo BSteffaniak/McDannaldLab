@@ -36,7 +36,7 @@ var people = [
         titles: ["Title 1", "Title 123"],
         description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
         email: "asdfasdf@gmail.com",
-        imageUrl: "/content/images/JohnMarriott4.jpg",
+        imageUrl: "/content/images/MadelynRay.jpg",
         cvUrl: "resources/people/",
     }
 ];
