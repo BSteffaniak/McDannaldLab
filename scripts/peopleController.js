@@ -1,7 +1,7 @@
 var people = [
     {
         name: "Mike McDannald",
-        titles: ["Title 1", "Title n"],
+        titles: [],
         description: "Mike received his in B.A. in Neuroscience from the University of Illinois at Urbana-Champaign. He did is graduate work with Peter Holland at Johns Hopkins and his postdoc with Geoffrey Schoenbaum at the University of Maryland School of Medicine and the National Institute on  Drug Abuse. He started his lab at Boston College in the summer of 2014.",
         email: "michael.mcdannald@bc.edu",
         imageUrl: "/content/images/mike.jpg",
@@ -9,7 +9,7 @@ var people = [
     },
     {
         name: "Mahsa Moaddab",
-        titles: ["Title 1", "Title 123"],
+        titles: ["Postdoctoral Fellow"],
         description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
         email: "asdfasdf@gmail.com",
         imageUrl: "/content/images/JohnMarriott.jpg",
@@ -17,7 +17,7 @@ var people = [
     },
     {
         name: "Rachel Zacharias",
-        titles: ["Title 1", "Title 123"],
+        titles: ["Graduate Student"],
         description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
         email: "asdfasdf@gmail.com",
         imageUrl: "/content/images/RachelZacharias.jpg",
@@ -25,7 +25,7 @@ var people = [
     },
     {
         name: "Kristina Wright",
-        titles: ["Title 1", "Title 123"],
+        titles: ["Graduate Student"],
         description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
         email: "asdfasdf@gmail.com",
         imageUrl: "/content/images/JohnMarriott3.jpg",
@@ -33,7 +33,7 @@ var people = [
     },
     {
         name: "Madelyn Ray",
-        titles: ["Title 1", "Title 123"],
+        titles: ["Graduate Student"],
         description: "Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....",
         email: "asdfasdf@gmail.com",
         imageUrl: "/content/images/MadelynRay.jpg",
