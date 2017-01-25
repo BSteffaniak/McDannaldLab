@@ -18,10 +18,10 @@ var people = [
     {
         name: "Rachel Zacharias",
         titles: ["Graduate Student"],
-        description: 'Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....',
-        email: "asdfasdf@gmail.com",
+        description: 'Rachel is a Behavioral Neuroscience Ph.D. student in the McDannald lab. While obtaining her B.S. in Neuroscience and Psychology at Baldwin Wallace University in Ohio, she worked in the Neuroscience Lab with Dr. G. Andrew Mickley, Dr. Christopher Turner, and Dr. Brian Thomas on numerous research projects. At Baldwin Wallace, Rachel discovered her interest in fear learning and the neural circuitry underlying Post-Traumatic Stress Disorder. Having joined the McDannald lab in 2015, Rachel is currently working on projects concerning the impact of early life stress on fear discrimination in adulthood and the role of the periaqueductal gray in prediction error signaling.',
+        email: "zacharir@bc.edu",
         imageUrl: "/content/images/RachelZacharias.jpg",
-        cvUrl: "resources/people/",
+        cvUrl: "content/cv/Zacharias CV.pdf",
     },
     {
         name: "Kristina Wright",
