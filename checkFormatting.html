@@ -9,19 +9,45 @@
         </div>
         
         <script>
-            window.addEventListener('error', function (error) {
-                var filename = error.filename.substring(error.filename.lastIndexOf("/") + 1);
+            (function () {
+                var container = document.getElementById("error-container");
                 
-                if (["people.js", "publications.js"].indexOf(filename) >= 0) {
-                    $.get(error.filename, function(data, status) {
-                        
-                        
-                        var lines = data.split(/\n/g);
-                        
-                        console.log(lines[error.lineno - 1]);
-                    });
-                }
-            });
+                window.addEventListener('error', function (error) {
+                    var filename = error.filename.substring(error.filename.lastIndexOf("/") + 1);
+                    
+                    if (["people.js", "publications.js"].indexOf(filename) >= 0) {
+                        $.get(error.filename, function(data, status) {
+                            var element = document.createElement("pre");
+                            element.classList.add("error");
+                            
+                            
+                            var lines = data.split(/\n/g);
+                            
+                            console.log(lines[error.lineno - 1]);
+                            
+                            lines.forEach(function (line, number) {
+                                var lineElement = document.createElement("span");
+                                lineElement.innerHTML = line;
+                                
+                                var distance = number + 1 - error.lineno;
+                                
+                                if (Math.abs(distance) <= 1) {
+                                    lineElement.style.backgroundColor = "yellow";
+                                    
+                                    if (distance == 0) {
+                                        lineElement.style.backgroundColor = "red";
+                                    }
+                                }
+                                
+                                element.appendChild(lineElement);
+                                element.appendChild(document.createElement("br"));
+                            });
+                            
+                            container.appendChild(element);
+                        });
+                    }
+                });
+            })();
         </script>
         
         <!-- These are the scripts to test -->
