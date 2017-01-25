@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="/scripts/jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" href="/content/styles/checkFormatting.css" />
+    </head>
+    <body>
+        <div id="error-container">
+            
+        </div>
+        
+        <script>
+            window.addEventListener('error', function (error) {
+                var filename = error.filename.substring(error.filename.lastIndexOf("/") + 1);
+                
+                if (["people.js", "publications.js"].indexOf(filename) >= 0) {
+                    $.get(error.filename, function(data, status) {
+                        
+                        
+                        var lines = data.split(/\n/g);
+                        
+                        console.log(lines[error.lineno - 1]);
+                    });
+                }
+            });
+        </script>
+        
+        <!-- These are the scripts to test -->
+        <script src="/scripts/people.js"></script>
+    </body>
+</html>
