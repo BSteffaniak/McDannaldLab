@@ -1,0 +1,260 @@
+\ Based on program written by Charles Pickens 7/12/07
+\ Adapted 6/12/13 by Mike McDannald
+\ Probabilistic Reinforcement "25" program
+\ Contains 4 trial types
+\ Cues on for 10 seconds, followed by one second empty and on footshock trials a 0.5s, 0.5mA shock
+\ Arduino1 100% reinforced with footshock (4)
+\ Arduino2 25% reinforced with footshock (2 trial shock, 6 trials no shock)
+\ Arduino3 0% reinforced with footshock (4)
+\ Conditioning occurs over a baseline vi60 schedule, unrelated to the schedule of the conditioning trials
+\ Session terminates after 16 total trials and trial order is randomly selected without replacement
+\ Mean ITI = 180 seconds, varying from 150 seconds to 210 seconds
+
+\ 100% cue - arduino 1
+\ PR cue -   arduino 4
+\ 0% cue -   arduino 3
+
+\ #R1 - Nosepoke (center)
+\ #R2 - Nosepoke (left) Make sure these are inserted in chamber
+\ #R3 - Nosepoke (right) Make sure these are inserted in chamber
+
+\ define outputs:
+
+^shock =     1
+^feeder =    2
+^leftcue =   3
+^rightcue =  4
+^backhouse = 5
+^boxfan =    6
+^arduino1 =  9
+^arduino2 =  10
+^arduino3 =  11
+^arduino4 =  12
+
+\ define inputs
+
+^nosepoke1 = 1
+^nosepoke2 = 2
+^nosepoke3 = 3
+
+\ define variables
+\ A(0) = number of nosepokes
+\ A(1) = number of rewards
+\ A(2) = 100% cue counter
+\ A(3) = PR cue shock counter
+\ A(4) = PR cue no shock counter
+\ A(5) = 0% cue counter
+\ A(6) = 100% shock counter
+\ A(7) = 50% shock counter
+\ A(8) = total trial # counter
+\ B =
+\ C = vi60 list
+\ D = iti list
+\ E = trial list
+\ F = nosepoke array
+\ G = reward array
+\ H = 100% cue array
+\ I = PR cue shock array
+\ J = PR cue no shock array
+\ K = 0% cue array
+\ L = iti selected without replacement
+\ M = iti in seconds
+\ N = session timer
+\ O = trial type selected without replacement
+\ P = 100% shock array
+\ Q = 50% shock array
+\ R =
+\ S =
+\ T = time in 0.01 s intervals
+\ U =
+\ V =
+\ W =
+\ X =
+\ Y = vi60 interval in seconds
+\ Z = vi60 interval selected without replacement
+
+List A = 0, 0, 0, 0, 0, 0, 0, 0, 0
+List C = 114, 108, 102, 96, 90, 84, 78, 72, 66, 60, 60, 54, 48, 42, 36, 30, 24, 18, 12, 6 \ vi60 list
+List D = 180, 180, 170, 190, 160, 200, 150, 210 \ iti list
+List E = 1, 1, 1, 1, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4 \ trial list
+
+DIM F = 49999 \ sets nosepoke array to 50000
+DIM G = 499 \ sets reward delivery time array to 500
+DIM H = 19 \ 100% cue array
+DIM I = 19 \ PR cue shock array
+DIM J = 19 \ PR cue no shock array
+DIM K = 19 \ 0% cue array
+DIM P = 19 \ PR shock array
+DIM Q = 19 \ PR shock array
+
+\___________________________________________________________________
+
+s.s.1, \ Main control logic for vi60 schedule
+
+s1,
+  #start: on ^boxfan ---> s2
+
+s2,
+  0.01": randd Z = C; SET Y = Z*1"; SHOW 2, VI, Z/100 ---> s3 \ this sets the VI timer
+
+s3,
+  Y#T: show 2, Interval, 0 ---> s4 \ waits until the time is up and then awaits a response
+
+s4,
+  #R ^nosepoke1: on ^feeder; Z1 ---> s2
+  0.01": show 2, VI, 0 ---> sx
+
+\___________________________________________________________________
+
+s.s.2, \ Response counter
+
+s1,
+  #start: show 3, # Pokes, A(0) ---> s2
+
+s2,
+  #R ^nosepoke1: set F(A(0)) = T; add A(0); set F(A(0)) = -987.987; show 3, # Pokes, A(0) ---> sx
+  #z2: ---> s1
+
+\___________________________________________________________________
+
+s.s.3, \ Reward counter
+
+s1,
+  #z1: SET G(A(1)) = T; ADD A(1); SET G(A(1)) = -987.987; show 4, # Rewards, A(1) ---> s2
+
+s2,
+  0.05": off ^feeder ---> s1
+
+\___________________________________________________________________
+
+s.s.4, \ Time incriment in 0.01 second intervals
+
+s1,
+  #start: ---> s2
+
+s2,
+  0.01": SET T = T + 0.01 ---> sx
+
+\___________________________________________________________________
+
+s.s.5 \ Session Timer
+
+s1,
+  #start: show 1, Session, N ---> s2
+
+s2,
+  1": Add N; show 1, Session, N/100 ---> sx
+
+\___________________________________________________________________
+
+s.s.6, \ Main control logic for trials
+
+s1,
+  #start: ---> s2
+
+s2,
+  4': ---> s3 \ 5 minute warmup period
+
+s3,
+  0.01": randd L = D; SET M = L*1"; SHOW 5, ITI, L/100 ---> s4 \ this sets the ITI timer
+
+s4,
+  M#T: randd O = E; if O = 1 [@true, @false] \ checks for 100% trial
+                              @true: ---> s5
+                              @false: if O = 2 [@true, @false] \ checks for PR shock trial
+                                                @true: ---> s11
+                                                @false: if O = 3 [@true, @false] \ checks for PR omission trial
+                                                                  @true: ---> s17
+                                                                  @false: if O = 4 [@true, @false] \ checks for 0% trial
+                                                                                    @true: ---> s23
+                                                                                    @false: ---> sx
+s5,
+
+  1.00": ADD A(8)  ---> s6
+
+s6,
+
+  0.01": SET H(A(2)) = T; ADD A(2); SET H(A(2)) = -987.987; on ^arduino1 ---> s7
+
+s7,
+  1.00": off ^arduino1 ---> s8
+
+s8,
+  10.00": SET P(A(6)) = T; ADD A(6); SET P(A(6)) = -987.987; on ^shock ---> s9
+
+s9,
+  0.50":  off ^shock ---> s10
+
+s10,
+  0.01": if A(8) > 15 [@true, @false]
+                              @true: ---> s30
+                              @false: ---> s3
+
+s11,
+
+  1.00": ADD A(8) ---> s12
+
+s12,
+
+  0.01": SET I(A(3)) = T; ADD A(3); SET I(A(3)) = -987.987; on ^arduino4 ---> s13
+
+s13,
+  1.00": off ^arduino4 ---> s14
+
+s14,
+  10.00": SET Q(A(7)) = T; ADD A(7); SET Q(A(7)) = -987.987; on ^shock ---> s15
+
+s15,
+  0.50":  off ^shock ---> s16
+
+s16,
+  0.01": if A(8) > 15 [@true, @false]
+                              @true: ---> s30
+                              @false: ---> s3
+
+s17,
+
+  1.00": ADD A(8) ---> s18
+
+s18,
+
+  0.01": SET J(A(4)) = T; ADD A(4); SET J(A(4)) = -987.987; on ^arduino4 ---> s19
+
+s19,
+  1.00": off ^arduino4 ---> s20
+
+s20,
+  10.00": ---> s21
+
+s21,
+  0.50":  ---> s22
+
+s22,
+  0.01": if A(8) > 15 [@true, @false]
+                              @true: ---> s30
+                              @false: ---> s3
+
+s23,
+
+ 1.00": ADD A(8); ---> s24
+
+s24,
+
+ 0.01": SET K(A(5)) = T; ADD A(5); SET K(A(5)) = -987.987; on ^arduino3 ---> s25
+
+s25,
+  1.00": off ^arduino3 ---> s26
+
+s26,
+  10.00": ---> s27
+
+s27,
+  0.50":  ---> s28
+
+s28,
+  0.01": if A(8) > 15 [@true, @false]
+                              @true: ---> s30
+                              @false: ---> s3
+
+s30,
+  1': ---> STOPABORTFLUSH

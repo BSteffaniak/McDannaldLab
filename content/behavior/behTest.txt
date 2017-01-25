@@ -1,0 +1,73 @@
+\ Written 6/12/13 by Mike McDannald
+\ Program to test all inputs and outputs
+
+\ #R1 - Nosepoke (center)
+\ #R2 - Nosepoke (center) Make sure these are inserted in chamber
+\ #R3 - Nosepoke (center) Make sure these are inserted in chamber
+
+\ define outputs:
+
+^shock =     1
+^feeder =    2
+^leftcue =   3
+^rightcue =  4
+^backhouse = 5
+^boxfan =    6
+^laser =     7
+^arduino1 =  9
+^arduino2 =  10
+^arduino3 =  11
+^arduino4 =  12
+
+\ define inputs
+
+^nosepoke1 = 1
+^nosepoke2 = 2
+^nosepoke3 = 3
+
+S.S.1, \ Main control logic for behTest
+
+s1,
+  #start: on ^boxfan; ---> s2
+
+s2,
+  #R ^nosepoke1:  ---> s3
+
+s3,
+  0.5": on ^feeder ---> s4
+
+s4,
+  0.5": off ^feeder ---> s5
+
+s5,
+  0.5": on ^arduino1 ---> s6
+
+s6,
+  0.5": off ^arduino1 ---> s7
+
+s7,
+  11": on ^arduino3 ---> s8
+
+s8,
+  0.5": off ^arduino3 ---> s9
+
+s9,
+  11": on ^arduino4 ---> s10
+
+s10,
+  0.5": off ^arduino4 ---> s11
+
+s11,
+  11": on ^rightcue; on ^leftcue; on ^backhouse ---> s12
+
+s12,
+  2": off ^rightcue; off ^leftcue; off ^backhouse ---> s13
+
+s13,
+  0.5": on ^shock ---> s14
+
+s14,
+  0.5": off ^shock ---> s15
+
+s15,
+  0.1" ---> STOPKILL
