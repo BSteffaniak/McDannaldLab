@@ -25,6 +25,10 @@ h1 {
     margin-bottom: 10px;
 }
 
+nav ul li a {
+    font-size: 14px;
+}
+
 .home-aligned {
     margin-left: 38px;
 }
