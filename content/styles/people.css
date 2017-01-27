@@ -2,6 +2,10 @@ table.people tr td {
     padding: 0;
 }
 
+table.people tr:not(:last-of-type) td {
+    padding-bottom: 30px;
+}
+
 table.people tr td p {
     margin: 0;
 }
