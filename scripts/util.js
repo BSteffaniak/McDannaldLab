@@ -84,3 +84,12 @@ window.originalPathname = window.location.pathname;
 window.originalQueryString = window.location.search;
 window.originalQueryParams = window.queryParams;
 window.originalHash = window.location.hash;
+
+function fileExists(location, onExists, onNotExists) {
+    $.ajax({
+        type: 'HEAD',
+        url: location,
+        success: onExists,
+        error: onNotExists
+    });
+}
