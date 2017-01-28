@@ -3,6 +3,7 @@
     
     window.fileErrors = {};
     window.fileWarnings = {};
+    window.fileLines = {};
     
     var files = document.getElementById("files");
     
@@ -146,6 +147,7 @@
                 element.classList.add("error");
                 
                 var lines = data.split(/\s*?\n/g);
+                window.fileLines[location] = [];
                 
                 lines.forEach(function (line, number) {
                     var lineCounter = document.createElement("span");
@@ -160,6 +162,7 @@
                     highlightLine(lineElement, number + 1, errors);
                     
                     element.appendChild(lineElement);
+                    window.fileLines[location].push(lineElement);
                 });
                 
                 container.appendChild(element);
