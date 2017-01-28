@@ -54,15 +54,33 @@
         }
     }
     
-    function validateProperty(location, key, obj, model) {
+    function validateProperty(location, source, key, obj, keyIndex, objIndex, model) {
         var value = model[key];
         var property = obj[key];
         
-        function warning(message) {
-            window.fileWarnings = window.fileWarnings[location] || [];
-            window.fileWarnings.push(message);
+        function warning(message, containsProperty) {
+            var objPosition = getPosition(source, "{", objIndex);
+            var position = objPosition;
             
-            console.warn(message);
+            if (containsProperty !== false) {
+                position = source.indexOf(key, objPosition);
+            }
+            
+            var subsource = source.substring(0, position);
+            
+            var lineNumber = subsource.length - subsource.replace(/\n/g, "").length + 1;
+            
+            window.fileWarnings[location] = window.fileWarnings[location] || [];
+            window.fileWarnings[location].push({
+                message: message,
+                lineno: lineNumber
+            });
+            
+            if (window.fileLines[location]) {
+                highlightLine(fileLines[location][lineNumber - 1], lineNumber, undefined, window.fileWarnings[location]);
+            }
+            
+            console.warn(message + " on line " + lineNumber);
         }
         
         if (property) {
@@ -91,7 +109,7 @@
             }
         } else {
             if (!value.optional) {
-                warning("Missing required property '" + key + "'");
+                warning("Missing required property '" + key + "'", false);
                 
                 return;
             }
