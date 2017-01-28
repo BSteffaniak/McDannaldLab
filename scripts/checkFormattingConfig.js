@@ -15,3 +15,30 @@ window.publicationPropertyChecker = {
         optional: true
     }
 };
+
+window.peoplePropertyChecker = {
+    name: {
+        type: "string",
+        optional: false
+    },
+    description: {
+        type: "string",
+        optional: false
+    },
+    imageUrl: {
+        type: "image",
+        optional: false
+    },
+    titles: {
+        type: "array",
+        optional: true
+    },
+    email: {
+        type: "email",
+        optional: true
+    },
+    cvUrl: {
+        type: "url",
+        optional: true
+    }
+};
