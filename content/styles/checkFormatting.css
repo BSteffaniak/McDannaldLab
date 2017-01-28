@@ -8,17 +8,51 @@ html, body {
 
 pre {
     line-height: 1.2;
+    
+    margin: 0;
 }
 
-#line-container span:after {
+.line-container span:after {
     content: '.';
 }
 
-#line-container {
+.line-container {
     text-align: right;
     white-space: pre-line;
+}
+
+.line-container span {
+    padding-right: 5px;
+}
+
+pre > span {
+    display: block;
+}
+
+pre > span:nth-of-type(even) {
+    background-color: #fafafa;
+}
+
+pre > span:nth-of-type(odd) {
+    background-color: #fdfdfd;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/*tbody:nth-of-type(odd) {
+    background-color: #eee;
+}
+
+tbody:nth-of-type(even) {
+    background-color: #fff;
+}*/
+
+tr:first-of-type {
+    background-color: #e8e8e8;
     
-    margin-right: 5px;
+    font-size: 25px;
 }
 
 #success {
