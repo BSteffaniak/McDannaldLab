@@ -42,3 +42,22 @@ window.peoplePropertyChecker = {
         optional: true
     }
 };
+
+window.customPropertyChecking = {
+    "/scripts/warningExample.js": {
+        export: "warnings",
+        model: window.publicationPropertyChecker,
+    },
+    "/scripts/errorExample.js": {
+        export: "errors",
+        model: window.publicationPropertyChecker,
+    },
+    "/scripts/people.js": {
+        export: "people",
+        model: window.peoplePropertyChecker,
+    },
+    "/scripts/publications.js": {
+        export: "publications",
+        model: window.publicationPropertyChecker
+    }
+};
