@@ -5,6 +5,27 @@
     window.fileWarnings = {};
     window.fileLines = {};
     
+    var errorListeners = {};
+    var warningListeners = {};
+    
+    function onFileError(location, callback) {
+        errorListeners[location] = errorListeners[location] || [];
+        errorListeners[location].push(callback);
+        
+        if (window.fileErrors[location]) {
+            callback(window.fileErrors[location]);
+        }
+    }
+    
+    function onFileWarning(location, callback) {
+        warningListeners[location] = warningListeners[location] || [];
+        warningListeners[location].push(callback);
+        
+        if (window.fileWarnings[location]) {
+            callback(window.fileWarnings[location]);
+        }
+    }
+    
     var files = document.getElementById("files");
     
     function addTitle(container, location, errors) {
@@ -12,18 +33,30 @@
         var td = document.createElement("td");
         var title = document.createElement("span");
         var status = document.createElement("span");
-        status.classList.add("status");
+        var success = document.createElement("span");
+        var errors = document.createElement("span");
+        var warnings = document.createElement("span");
         
         title.textContent = location + " - ";
         
-        if (errors) {
-            status.textContent = errors.length + " error" + (errors.length != 1 ? "s" : "");
-            status.classList.add("errors");
-        } else {
-            status.textContent = "Success";
-            status.classList.add("success");
-        }
+        success.classList.add("success");
+        errors.classList.add("errors");
+        warnings.classList.add("warnings");
         
+        success.textContent = "Success";
+        
+        onFileError(location, function (list) {
+            errors.textContent = list.length + " error" + (list.length != 1 ? "s" : "");
+            success.style.display = "none";
+        });
+        onFileWarning(location, function (list) {
+            warnings.textContent = list.length + " warning" + (list.length != 1 ? "s" : "");
+            success.style.display = "none";
+        });
+        
+        status.appendChild(success);
+        status.appendChild(errors);
+        status.appendChild(warnings);
         td.appendChild(title);
         td.appendChild(status);
         row.appendChild(document.createElement("td"));
@@ -78,6 +111,12 @@
             
             if (window.fileLines[location]) {
                 highlightLine(fileLines[location][lineNumber - 1], lineNumber, undefined, window.fileWarnings[location]);
+            }
+            
+            if (warningListeners[location]) {
+                warningListeners[location].forEach(function (callback) {
+                    callback(window.fileWarnings[location]);
+                });
             }
             
             console.warn(message + " on line " + lineNumber);
