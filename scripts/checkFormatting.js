@@ -183,7 +183,7 @@
                     lineElement.classList.add("line-" + (number + 1));
                     lineElement.innerHTML = line || " ";
                     
-                    highlightLine(lineElement, number + 1, errors);
+                    highlightLine(lineElement, number + 1, errors, warnings);
                     
                     element.appendChild(lineElement);
                     window.fileLines[location].push(lineElement);
