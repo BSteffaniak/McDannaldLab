@@ -31,22 +31,24 @@
         container.appendChild(row);
     }
     
-    function highlightLine(lineElement, lineno, errors) {
+    function highlightLine(lineElement, lineno, errors, warnings) {
+        if (warnings) {
+            warnings.forEach(function (warning) {
+                var distance = lineno - warning.lineno;
+                
+                if (distance == 0) {
+                    lineElement.style.backgroundColor = "yellow";
+                    lineElement.setAttribute("title", warning.message);
+                }
+            });
+        }
         if (errors) {
-            var minDist = Number.MAX_VALUE;
-            
             errors.forEach(function (error) {
                 var distance = lineno - error.lineno;
-                minDist = Math.min(minDist, distance);
                 
-                if (Math.abs(minDist) <= 1) {
-                    if (distance == 0) {
-                        lineElement.style.backgroundColor = "red";
-                        lineElement.setAttribute("title", error.message);
-                    } else {
-                        lineElement.style.backgroundColor = "yellow";
-                        lineElement.setAttribute("title", "This line might be part of the error.");
-                    }
+                if (distance == 0) {
+                    lineElement.style.backgroundColor = "red";
+                    lineElement.setAttribute("title", error.message);
                 }
             });
         }
