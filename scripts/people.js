@@ -11,7 +11,7 @@ var people = [
         name: "Mahsa Moaddab",
         titles: ["Postdoctoral Fellow"],
         description: 'Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....',
-        email: "asdfasdf@gmail.com",
+        email: "asdfasdf",
         imageUrl: "/content/images/JohnMarriott.jpg",
         cvUrl: "resources/people/",
     },
