@@ -2,6 +2,7 @@
     $(document).tooltip();
     
     window.fileErrors = {};
+    window.fileWarnings = {};
     
     var files = document.getElementById("files");
     
@@ -50,29 +51,44 @@
         }
     }
     
-    function validateProperty(key, obj, model) {
+    function validateProperty(location, key, obj, model) {
         var value = model[key];
         var property = obj[key];
+        
+        function warning(message) {
+            window.fileWarnings = window.fileWarnings[location] || [];
+            window.fileWarnings.push(message);
+            
+            console.warn(message);
+        }
         
         if (property) {
             if (value.type == "date") {
                 if (value.format && !moment(property, value.format, true).isValid()) {
-                    console.warn("Invalid date format '" + property + "' given for required format of '" + value.format + "'");
+                    warning("Invalid date format '" + property + "' given for required format of '" + value.format + "'");
                 }
-            } else if (value.type == "url") {
+            } else if (value.type == "url" || value.type == "image") {
                 fileExists(property, function () {
                     
                 }, function () {
-                    console.warn("Invalid file url '" + property + "'");
+                    if (value.type == "url") {
+                        warning("Invalid file url '" + property + "'");
+                    } else if (value.type == "image") {
+                        warning("Invalid image url '" + property + "'");
+                    }
                 });
             } else if (value.type == "email") {
                 if (!validateEmail(property)) {
-                    console.warn("Invalid email '" + property + "'");
+                    warning("Invalid email '" + property + "'");
+                }
+            } else if (["string", "number", "boolean"].indexOf(value.type) >= 0) {
+                if (typeof property !== value.type) {
+                    warning("Invalid type '" + (typeof property) + "'");
                 }
             }
         } else {
             if (!value.optional) {
-                console.log("missing property '" + key + "'", obj, value)
+                warning("Missing required property '" + key + "'");
                 
                 return;
             }
@@ -94,10 +110,6 @@
         loadScript(location, function () {
             var file = document.createElement("tbody");
             
-            var errors = window.fileErrors[location];
-            
-            addTitle(file, location, errors);
-            
             var row = document.createElement("tr");
             var lineContainerTd = document.createElement("td");
             var codeContainerTd = document.createElement("td");
@@ -106,8 +118,30 @@
             
             lineContainer.classList.add("line-container");
             container.classList.add("code-container");
-            
+        
             $.get(location, function(data, status) {
+                var checker = window.customPropertyChecking[location];
+                
+                if (checker && checker.export && checker.model) {
+                    var array = eval("(window." + checker.export + ")");
+                    var keys = Object.keys(checker.model);
+                    
+                    if (array) {
+                        array.forEach(function (obj) {
+                            keys.forEach(function (key) {
+                                validateProperty(location, key, obj, checker.model);
+                            });
+                        });
+                    } else {
+                        console.warn("No export '" + checker.export + "' from " + location);
+                    }
+                }
+                
+                var errors = window.fileErrors[location];
+                var warnings = window.fileWarnings[location];
+                
+                addTitle(file, location, errors);
+                
                 var element = document.createElement("pre");
                 element.classList.add("error");
                 
@@ -129,31 +163,16 @@
                 });
                 
                 container.appendChild(element);
-            });
-            
-            lineContainerTd.appendChild(lineContainer);
-            codeContainerTd.appendChild(container);
-            
-            row.appendChild(lineContainerTd);
-            row.appendChild(codeContainerTd);
-            
-            file.appendChild(row);
-            files.appendChild(file);
-            
-            var checker = window.customPropertyChecking[location];
-            
-            if (checker && checker.export && checker.model) {
-                var array = eval("(" + checker.export + ")");
-                var keys = Object.keys(checker.model);
                 
-                if (array) {
-                    array.forEach(function (obj) {
-                        keys.forEach(function (key) {
-                            validateProperty(key, obj, checker.model);
-                        });
-                    });
-                }
-            }
+                lineContainerTd.appendChild(lineContainer);
+                codeContainerTd.appendChild(container);
+                
+                row.appendChild(lineContainerTd);
+                row.appendChild(codeContainerTd);
+                
+                file.appendChild(row);
+                files.appendChild(file);
+            });
         });
     });
 })();
