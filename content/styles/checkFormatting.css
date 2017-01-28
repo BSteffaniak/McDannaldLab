@@ -73,3 +73,15 @@ tr:first-of-type {
 #success.active {
     display: block;
 }
+
+.success {
+    color: green;
+}
+
+.warnings {
+    color: yellow;
+}
+
+.errors {
+    color: red;
+}
