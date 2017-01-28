@@ -2,96 +2,17 @@
     <head>
         <script src="/scripts/jquery-3.1.1.min.js"></script>
         <script src="/scripts/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <script src="/scripts/moment.js"></script>
+        <script src="/scripts/util.js"></script>
+        <script src="/scripts/checkFormattingConfig.js"></script>
         <link rel="stylesheet" href="/scripts/jquery-ui-1.12.1.custom/jquery-ui.structure.min.css" />
         <link rel="stylesheet" href="/scripts/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css" />
         <link rel="stylesheet" href="/content/styles/checkFormatting.css" />
     </head>
     <body>
-        <table>
-            <tr>
-                <td>
-                    <pre id="line-container"></pre>
-                </td>
-                <td>
-                    <div id="error-container">
-                        
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <table id="files" cellspacing="0" cellpadding="0"></table>
         <div id="success">SUCCESS</div>
         
-        <script>
-            (function () {
-                $(document).tooltip();
-                
-                window.fileErrors = {};
-                
-                window.addEventListener('error', function (error) {
-                    var filename = error.filename.substring(error.filename.lastIndexOf("/") + 1);
-                    
-                    if (["people.js", "publications.js"].indexOf(filename) >= 0) {
-                        window.fileErrors[filename] = window.fileErrors[filename] || [];
-                        window.fileErrors[filename].push(error);
-                    }
-                });
-            })();
-        </script>
-        
-        <!-- These are the scripts to test -->
-        <script src="/scripts/people.js"></script>
-        <script src="/scripts/publications.js"></script>
-        
-        <script>
-            var lineContainer = document.getElementById("line-container");
-            var container = document.getElementById("error-container");
-            
-            var keys = Object.keys(window.fileErrors);
-            
-            if (keys.length > 0) {
-                keys.forEach(function (filename) {
-                    var errors = window.fileErrors[filename];
-                    
-                    errors.forEach(function (error) {
-                        $.get(error.filename, function(data, status) {
-                            var element = document.createElement("pre");
-                            element.classList.add("error");
-                            
-                            var lines = data.split(/\s*?\n/g);
-                            
-                            lines.forEach(function (line, number) {
-                                var lineCounter = document.createElement("span");
-                                lineCounter.innerHTML = number + 1;
-                                
-                                lineContainer.appendChild(lineCounter);
-                                lineContainer.appendChild(document.createElement("br"));
-                                
-                                var lineElement = document.createElement("span");
-                                lineElement.innerHTML = line;
-                                
-                                var distance = number + 1 - error.lineno;
-                                
-                                if (Math.abs(distance) <= 1) {
-                                    if (distance == 0) {
-                                        lineElement.style.backgroundColor = "red";
-                                        lineElement.setAttribute("title", error.message);
-                                    } else {
-                                        lineElement.style.backgroundColor = "yellow";
-                                        lineElement.setAttribute("title", "This line might be part of the error.");
-                                    }
-                                }
-                                
-                                element.appendChild(lineElement);
-                                element.appendChild(document.createElement("br"));
-                            });
-                            
-                            container.appendChild(element);
-                        });
-                    });
-                });
-            } else {
-                document.getElementById("success").classList.add("active");
-            }
-        </script>
+        <script src="/scripts/checkFormatting.js"></script>
     </body>
 </html>
