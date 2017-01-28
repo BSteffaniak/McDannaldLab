@@ -148,9 +148,13 @@
                     var keys = Object.keys(checker.model);
                     
                     if (array) {
-                        array.forEach(function (obj) {
-                            keys.forEach(function (key) {
-                                validateProperty(location, key, obj, checker.model);
+                        var source = data.replace(/(:\s*)["](\\"|[^"])*?["]/g, "$1")
+                            .replace(/(:\s*)['](\\'|[^'])*?[']/g, "$1")
+                            .replace(/(:\s*)\[([^\[])*?\]/g, "$1");
+                        
+                        array.forEach(function (obj, objIndex) {
+                            keys.forEach(function (key, keyIndex) {
+                                validateProperty(location, source, key, obj, keyIndex, objIndex + 1, checker.model);
                             });
                         });
                     } else {
