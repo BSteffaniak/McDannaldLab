@@ -194,6 +194,8 @@ li ol, li ul {
 .width {
 	width: 960px;
 	margin: 0 auto;
+    
+    box-sizing: border-box;
 }
 
 #container {

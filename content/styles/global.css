@@ -29,14 +29,6 @@ nav ul li a {
     font-size: 14px;
 }
 
-.home-aligned {
-    margin-left: 38px;
-}
-
-.home-aligned.symmetrical {
-    margin-right: 38px;
-}
-
 .question {
     margin-left: 20px;
     
