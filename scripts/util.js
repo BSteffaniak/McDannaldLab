@@ -134,3 +134,13 @@ function validateEmail(email) {
 function getPosition(string, subString, index, offset) {
     return string.split(subString, index).join(subString).length;
 }
+
+window.currentFontSize = 18;
+
+function changeFontSize(delta) {
+    window.currentFontSize += delta;
+    
+    document.getElementById("body").style.fontSize = window.currentFontSize + "px";
+    
+    document.getElementById("font-size").innerHTML = window.currentFontSize;
+}
