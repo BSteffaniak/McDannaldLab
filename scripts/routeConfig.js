@@ -25,7 +25,8 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$location
             css: "/content/styles/people.css",
             controller: "PeopleController"
         }, {
-            url: "resources"
+            url: "resources",
+            css: "/content/styles/resources.css",
         }, {
             url: "contact",
             css: "/content/styles/contact.css"
@@ -34,7 +35,8 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$location
         }, {
             url: "resources/analysis"
         }, {
-            url: "resources/ardbark"
+            url: "resources/ardbark",
+            css: "/content/styles/resources.css",
         }, {
             url: "resources/protocols"
         }];
