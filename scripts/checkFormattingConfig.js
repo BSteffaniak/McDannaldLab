@@ -1,5 +1,9 @@
+// List of files to check for errors or formatting issues.
 window.checkFormattingFiles = ["/scripts/warningExample.js", "/scripts/errorExample.js", "/scripts/people.js", "/scripts/publications.js"];
 
+/**
+ * Description of what the publicication JSON properties require.
+ */
 window.publicationPropertyChecker = {
     header: {
         type: "string",
@@ -16,6 +20,9 @@ window.publicationPropertyChecker = {
     }
 };
 
+/**
+ * Description of what the people JSON properties require.
+ */
 window.peoplePropertyChecker = {
     name: {
         type: "string",
@@ -43,6 +50,10 @@ window.peoplePropertyChecker = {
     }
 };
 
+/**
+ * Tell the format checker what the name of the variable that is generated
+ * from the script is and set the checker property.
+ */
 window.customPropertyChecking = {
     "/scripts/warningExample.js": {
         export: "warnings",
