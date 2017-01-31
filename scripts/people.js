@@ -10,10 +10,10 @@ var people = [
     {
         name: "Mahsa Moaddab",
         titles: ["Postdoctoral Fellow"],
-        description: 'Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....',
+        description: 'Mahsa is a postdoc in the lab. She earned her BSc in General Biology at Bu-Ali Sina University. During her Masters she spent two years working in the lab of Prof. Abbas Haghparast at Neuroscience Research Center, Shahid Beheshti University of Medical Sciences. She completed her PhD at the University of Otago with Prof. Colin Brown and Prof. Brian Hyland, investigating the effects of oxytocin on morphine addiction (using Conditioned Place Preference and in vivo extracellular recording). She then moved to the Rosalind Franklin University of Medicine and Science, where she worked with Assistant Prof. Joanna Dabrowska, studying the contribution of oxytocin system to fear and anxiety-like behavior. Her current research focuses on the effects of physical early life stress on the activity of the dorsal raphe nucleus during a Pavlovian Fear Discrimination task. Here is Mahsa’s CV.',
         email: "asdfasdf",
-        imageUrl: "/content/images/JohnMarriott.jpg",
-        cvUrl: "resources/people/",
+        imageUrl: "/content/images/Mahsa.jpg",
+        cvUrl: "/content/cv/Moaddab CV.pdf",
     },
     {
         name: "Rachel Zacharias",
@@ -21,7 +21,7 @@ var people = [
         description: 'Rachel is a Behavioral Neuroscience Ph.D. student in the McDannald lab. While obtaining her B.S. in Neuroscience and Psychology at Baldwin Wallace University in Ohio, she worked in the Neuroscience Lab with Dr. G. Andrew Mickley, Dr. Christopher Turner, and Dr. Brian Thomas on numerous research projects. At Baldwin Wallace, Rachel discovered her interest in fear learning and the neural circuitry underlying Post-Traumatic Stress Disorder. Having joined the McDannald lab in 2015, Rachel is currently working on projects concerning the impact of early life stress on fear discrimination in adulthood and the role of the periaqueductal gray in prediction error signaling.',
         email: "zacharir@bc.edu",
         imageUrl: "/content/images/RachelZacharias.jpg",
-        cvUrl: "content/cv/Zacharias CV.pdf",
+        cvUrl: "/content/cv/Zacharias CV.pdf",
     },
     {
         name: "Kristina Wright",
@@ -29,7 +29,7 @@ var people = [
         description: 'Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....',
         email: "asdfasdf@gmail.com",
         imageUrl: "/content/images/JohnMarriott3.jpg",
-        cvUrl: "resources/people/",
+        cvUrl: "/content/cv/",
     },
     {
         name: "Madelyn Ray",
@@ -37,6 +37,6 @@ var people = [
         description: 'Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....',
         email: "asdfasdf@gmail.com",
         imageUrl: "/content/images/MadelynRay.jpg",
-        cvUrl: "resources/people/",
+        cvUrl: "/content/cv/",
     }
 ];
