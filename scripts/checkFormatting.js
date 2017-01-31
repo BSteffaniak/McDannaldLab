@@ -1,4 +1,8 @@
-(function () {
+/**
+ * Page used to validate that the JSON data is formatted correctly and
+ * has no errors. Can be reached on the test server through /checkFormatting
+ */
+ (function () {
     $(document).tooltip();
     
     window.fileErrors = {};
@@ -28,6 +32,9 @@
     
     var files = document.getElementById("files");
     
+    /**
+     * Add title section to given @container element.
+     */
     function addTitle(container, location, errors) {
         var row = document.createElement("tr");
         var td = document.createElement("td");
@@ -64,6 +71,9 @@
         container.appendChild(row);
     }
     
+    /**
+     * Highlight and give a tooltip to the line if there is an error or warning.
+     */
     function highlightLine(lineElement, lineno, errors, warnings) {
         if (warnings) {
             warnings.forEach(function (warning) {
@@ -87,6 +97,10 @@
         }
     }
     
+    /**
+     * Validate that a property is formatted correctly. If not, add a warning
+     * or error to that line.
+     */
     function validateProperty(location, source, key, obj, keyIndex, objIndex, model) {
         var value = model[key];
         var property = obj[key];
@@ -155,6 +169,9 @@
         }
     }
     
+    /**
+     * Listen to javascript errors and add them to the error list if/when received.
+     */
     window.addEventListener('error', function (error) {
         var file = window.checkFormattingFiles.find(function (loc) {
             return error.filename.endsWith(loc);
@@ -166,6 +183,9 @@
         }
     });
     
+    /**
+     * Generate the DOM for the file code.
+     */
     window.checkFormattingFiles.forEach(function (location) {
         loadScript(location, function () {
             var file = document.createElement("tbody");
