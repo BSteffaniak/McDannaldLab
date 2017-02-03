@@ -26,10 +26,10 @@ var people = [
     {
         name: "Kristina Wright",
         titles: ["Graduate Student"],
-        description: 'Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....',
-        email: "asdfasdf@gmail.com",
-        imageUrl: "/content/images/JohnMarriott3.jpg",
-        cvUrl: "/content/cv/",
+        description: 'Kristina is a first year Ph.D. student in the Behavioral Neuroscience division of the Psychology department. She earned her B.S. in Psychology at Boston College while volunteering in Dr. Gorica Petrovich’s Neurobiology of Feeding Behavior Laboratory. Before joining the Ph.D. program, she devoted two years to opening Dr. Michael McDannald’s lab at Boston College, serving as a lab manager/research assistant. During this period, she examined the effects of early life stress and adolescent alcohol drinking on adult fear discrimination in rats. Additionally, she played a pivotal role in both set-up and custom design of in-vivo optogenetics and electrophysiology equipment presently in use in the lab. As a graduate student, Kristina is using a combination of complex behavior, in-vivo electrophysiology, and optogenetics to examine specific roles for the retrorubral field (RRF), dorsal raphe nucleus (DRN) and ventrolateral periaqueductal gray (vlPAG) in appropriate acquisition and maintenance of fear in adult rats. In the little spare time she has, Kristina enjoys classical ballet, drawing, witty cross stitching, and boat loads of coffee.',
+        email: "wrightko@bc.edu",
+        imageUrl: "/content/images/KristinaWright.jpeg",
+        cvUrl: "/content/cv/Wright CV.pdf",
     },
     {
         name: "Madelyn Ray",
