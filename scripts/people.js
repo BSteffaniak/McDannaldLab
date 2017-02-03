@@ -34,9 +34,9 @@ var people = [
     {
         name: "Madelyn Ray",
         titles: ["Graduate Student"],
-        description: 'Description.... Description.... Description.... Description.... Description.... Description.... Description.... Description....',
-        email: "asdfasdf@gmail.com",
+        description: 'Maddie is a first year Ph.D. student in the department of Psychology. She earned her B.S. in Psychological Sciences in 2016 from Kansas State University where she worked in <a href="http://pickenslab.net">Dr. Charles Pickens’</a> behavioral neuroscience lab. At Kansas, Maddie studied the effects of voluntary ethanol consumption in go/no-go reversal learning and the role of the orbitofrontal cortex in go/no-go tasks. Currently, Maddie is working on examining how the medial and lateral orbitofrontal cortex regulate aversive prediction errors related to changes in uncertainty. She is also interested in studying how self-administration of drugs of abuse affects the ability to accurately and efficiently employ threat estimations in situations of uncertainty. In her spare time, Maddie enjoys drinking coffee, running, and exploring the city of Boston.',
+        email: "madelyn.ray@bc.edu",
         imageUrl: "/content/images/MadelynRay.jpg",
-        cvUrl: "/content/cv/",
+        cvUrl: "/content/cv/Ray CV.pdf",
     }
 ];
