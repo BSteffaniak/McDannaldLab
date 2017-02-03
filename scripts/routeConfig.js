@@ -40,7 +40,7 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$location
             url: "resources/ardbark",
             css: "/content/styles/resources.css",
         }, {
-            url: "resources/protocols",
+            url: "resources/optogenetics",
             css: "/content/styles/resources.css",
         }];
     
