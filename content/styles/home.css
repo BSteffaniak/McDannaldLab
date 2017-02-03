@@ -6,8 +6,12 @@
     margin-top: 30px;
 }
 
+.blurb h4 {
+    color: black;
+}
+
 .blurb {
-    width: 68%;
+    margin-top: 15px;
 }
 
 /*table#home-content td:first-of-type {
