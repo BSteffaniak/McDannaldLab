@@ -1,4 +1,56 @@
 <div class="home-aligned symmetrical">
     <h1>Analysis programs</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="http://google.com" target="_blank">Duis aute</a> irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>
+        All programs are provided for free use. While we make every attempt to ensure their accuracy
+
+        and function, we make no representations or warranties of any kind, express or implied, about 
+
+        the completeness, accuracy, reliability, or suitability with respect to the information or products 
+
+        for any purpose. Any reliance you place on such information is therefore strictly at your own risk. 
+    </p>
+    <p>
+        If you *do* find these programs useful, we only ask you cite relevant publications from our 
+
+        laboratory (Wright et al 2015, DiLeo et al 2016).  
+    </p>
+    <p>
+        <a href="/content/analysis/pr25analysis.m" download="pr25analysis.m" target="_blank">pr25analysis.m</a>
+    </p>
+    <p>
+        All behavioral data are analyzed with Matlab. The script provided here calculates a suppression 
+
+        ratio for each trial, for each cue, for each rat. This is done by first calculating nose poke rates 
+
+        from two periods: the 20-s baseline period just prior to cue onset, and the 10-s cue period. A 
+
+        suppression ratio is calculated for the cue as follows: ((baseline nose poke rate – cue nose poke 
+
+        rate) / (baseline nose poke rate + cue nose poke rate)). A value of ‘1’ indicates complete 
+
+        suppression of nose poking during the cue window, relative to baseline, and high fear. A value 
+
+        of ‘0’ indicates no suppression, and no fear. Gradations between ‘0’ and ‘1’ permit intermediate 
+
+        levels of cued fear to be measured. 
+    </p>
+    <p>
+        This script groups individuals into ‘Control’ or ‘Lesion’ based on the ID of the subject, which is 
+
+        manually entered by the experimenter. Further groups can be added by creating new variables 
+
+        with unique names and assigning individuals to that variable. Means and standard error of 
+
+        means are then calculated for each cue, for each trial (Tbt), each individual (Ind) and the whole 
+
+        group (G). 
+    </p>
+    <p>
+        The final output of the script is three graphs: individual baseline nose poke rates, individual 
+
+        suppression ratios to each cue (averaged over whole session) and group suppression ratios to 
+
+        each cue (averaged over session), for the session analyzed. Output looks like that below.
+    </p>
+    <img src="/content/analysis/AnalysisOutputExample.jpg" style="max-width: 100%; margin: auto;"/>
 </div>
