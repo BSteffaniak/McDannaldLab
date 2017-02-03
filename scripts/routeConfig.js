@@ -31,14 +31,17 @@ angular.module("lab").config(['$stateProvider', '$urlRouterProvider', '$location
             url: "contact",
             css: "/content/styles/contact.css"
         }, {
-            url: "resources/behavior"
+            url: "resources/behavior",
+            css: "/content/styles/resources.css",
         }, {
-            url: "resources/analysis"
+            url: "resources/analysis",
+            css: "/content/styles/resources.css",
         }, {
             url: "resources/ardbark",
             css: "/content/styles/resources.css",
         }, {
-            url: "resources/protocols"
+            url: "resources/protocols",
+            css: "/content/styles/resources.css",
         }];
     
     $urlRouterProvider.otherwise("home");
