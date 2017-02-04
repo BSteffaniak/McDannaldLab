@@ -35,3 +35,7 @@
 .images {
     padding-top: 20px;
 }
+
+#content img {
+    height: 185px;
+}
