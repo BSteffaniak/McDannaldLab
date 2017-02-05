@@ -24,18 +24,19 @@
     vertical-align: top;
 }*/
 
-.images img {
-    display: block;
-    
-    margin: 25px auto;
-    margin-bottom: 40px;
-    margin-top: 0px;
-}
-
 .images {
     padding-top: 20px;
 }
 
+#content .images {
+    text-align: center;
+    
+    margin: auto;
+    margin-top: 50px;
+    
+    width: 85%;
+}
+
 #content img {
-    height: 185px;
+    height: 205px;
 }
