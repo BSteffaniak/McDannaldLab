@@ -4,7 +4,7 @@ var people = [
         titles: [],
         description: 'Mike received his in B.A. in Neuroscience from the University of Illinois at Urbana-Champaign. He did is Ph.D. with Peter Holland at Johns Hopkins and his postdoc with Geoffrey Schoenbaum at the University of Maryland School of Medicine and the National Institute on Drug Abuse. Mike joined the <a href="http://www.bc.edu/schools/cas/psych">Psychology Department at Boston College</a> the summer of 2014.',
         email: "michael.mcdannald@bc.edu",
-        imageUrl: "/content/images/mike.jpg",
+        imageUrl: "/content/images/McDannald.jpg",
         cvUrl: "content/cv/McDannald CV.pdf",
     },
     {
