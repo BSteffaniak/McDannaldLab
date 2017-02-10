@@ -1,6 +1,7 @@
 Setting up FileZilla connection
 ===============================
 
+ * You will need the key file to connect to the server. Whenever you are prompted for the key, give it the location to where it is located on your file system.
  * Open FileZilla (or any other FTP client)
  * Open the site manager ![alt text](sitemanager.png "Site manager")
  * Select the "New site" button and give it a name ![alt text](newsite.png "New site")
