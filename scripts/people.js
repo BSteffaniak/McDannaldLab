@@ -11,7 +11,7 @@ var people = [
         name: "Mahsa Moaddab",
         titles: ["Postdoctoral Fellow"],
         description: 'Mahsa earned her BSc in General Biology at Bu-Ali Sina University. During her Masters she spent two years working in the lab of Prof. Abbas Haghparast at Neuroscience Research Center, Shahid Beheshti University of Medical Sciences. She completed her PhD at the University of Otago with Prof. Colin Brown and Prof. Brian Hyland, investigating the effects of oxytocin on morphine addiction (using Conditioned Place Preference and in vivo extracellular recording). She then moved to the Rosalind Franklin University of Medicine and Science, where she worked with Assistant Prof. Joanna Dabrowska, studying the contribution of oxytocin system to fear and anxiety-like behavior. Her current research focuses on the effects of physical early life stress on the activity of the dorsal raphe nucleus in Pavlovian fear discrimination.',
-        email: "asdfasdf",
+        email: "moaddab@bc.edu",
         imageUrl: "/content/images/Mahsa.jpg",
         cvUrl: "content/cv/Moaddab CV.pdf",
     },
