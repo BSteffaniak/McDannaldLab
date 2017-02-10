@@ -21,7 +21,7 @@ Updating files on server
 Adding new person
 =================
 
- * Open scripts/people.js
+ * Open scripts/people.js in a text editor
  * Copy one of the existing person elements (pay close attention to the commas between them)
  * Edit the values to whatever is desired
  * Copy over the new scripts/people.js file over to the test platform
@@ -31,7 +31,7 @@ Adding new person
 Adding new publication
 ======================
 
- * Open scripts/publications.js
+ * Open scripts/publications.js in a text editor
  * Copy one of the existing publication elements (pay close attention to the commas between them)
  * Edit the values to whatever is desired
  * Copy over the new scripts/publications.js file over to the test platform
@@ -41,7 +41,7 @@ Adding new publication
 Creating a new page
 ===================
 
- * Open the scripts/pages.js script
+ * Open the scripts/pages.js script in a text editor
  * Copy one of the existing page elements (pay close attention to the commas between them)
  * Remove the css property
  * Update the url property to reflect where you want the page to be. Make sure there is no extension to the url (no .html)
@@ -79,7 +79,7 @@ Creating a new page
 Adding a page to the main menu bar
 ==================================
 
- * Open index.html
+ * Open index.html in a text editor
  * Find the `<ul>` element in the code that looks like:
      ```
          <ul>
