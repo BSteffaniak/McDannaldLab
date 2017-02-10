@@ -1,7 +1,6 @@
 Setting up FileZilla connection
 ===============================
 
- * You will need the key file to connect to the server. Whenever you are prompted for the key, give it the location to where it is located on your file system. The key should be kept private to keep the server secure.
  * Open FileZilla (or any other FTP client)
  * Open the site manager ![alt text](sitemanager.png "Site manager")
  * Select the "New site" button and give it a name ![alt text](newsite.png "New site")
@@ -9,6 +8,8 @@ Setting up FileZilla connection
  * Select the "SFTP" option from the Protocol dropdown ![alt text](sftp.png "SFTP dropdown")
  * Select login type "Normal" from the dropdown ![alt text](normal.png "Normal dropdown")
  * Enter "ubuntu" into the "User" input field ![alt text](user.png "User input field")
+ * Now you need to set the key by going to Edit -> Settings ![alt text](settings.png "Edit/settings")
+ * Then under the SFTP section, add your public key. **The key should be kept private to keep the server secure** ![alt text](key.png "Add key")
  * You can now connect by clicking the connect button ![alt text](connect.png "Connect button")
 
 Updating files on server
