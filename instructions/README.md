@@ -46,30 +46,32 @@ Creating a new page
  * Remove the css property
  * Update the url property to reflect where you want the page to be. Make sure there is no extension to the url (no .html)
  * The result should look something like:
-     ```
+	<pre>
 		{
 			url: "resources/something"
 		}
-     ```
+    </pre>
  * Now, in your file explorer, create a new file at the file location that the url points to. In this case, the file structure would look like:
-    root project folder ("test" or "production")
-    |----> content
-         |----> ...
-    |----> instructions
-         |----> ...
-    |----> resources
-         |----> analysis.html
-         |----> ardbark.html
-         |----> behavior.html
-         |----> optogenetics.html
-         |----> *something.html* <----- create it here - make sure it has .html extension here
-    |----> scripts
-         |----> ...
-    |----> WEB-INF
-         |----> ...
-    |----> checkFormatting.html
-    |----> contact.html
-    |----> home.html
+    <pre>
+		root project folder ("test" or "production")
+		|----> content
+			 |----> ...
+		|----> instructions
+			 |----> ...
+		|----> resources
+			 |----> analysis.html
+			 |----> ardbark.html
+			 |----> behavior.html
+			 |----> optogenetics.html
+			 |----> *something.html* <----- create it here - make sure it has .html extension here
+		|----> scripts
+			 |----> ...
+		|----> WEB-INF
+			 |----> ...
+		|----> checkFormatting.html
+		|----> contact.html
+		|----> home.html
+    </pre>
   
   * Now you can edit the file contents to have any html you want to show. It might be easier to copy the contents of an already created page and go from there.
   * Once finished, copy over the file to the desired directory on the test and production platform
