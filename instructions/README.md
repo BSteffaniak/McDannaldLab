@@ -96,5 +96,5 @@ Adding a page to the main menu bar
 			
 		</ul>
     ```
- * Copy one of the existing `<li>` tags and edit the values to reflect the new page's name. If the page is not on the root level of the project, you will need to specify the full path to the page in the "state.name == 'path/to/page'" part, as well as the 'ui-sref="path/to/page"' part.
+ * Copy one of the existing `<li>` tags and edit the values to reflect the new page's name. If the page is not on the root level of the project, you will need to specify the full path to the page in the "state.name == 'path/to/page'" part, as well as the 'ui-sref="path/to/page"' part. For example: `<li ng-class="{ selected: state.name == 'resources/something' }"><a ui-sref="resources/something">Something</a></li>`
  * Make sure to copy over the index.html to the test and production platforms. You will need to overwrite the old one.
