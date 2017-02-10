@@ -80,7 +80,7 @@ Adding a page to the main menu bar
 ==================================
 
  * Open index.html
- * Find the "<ul>" element in the code that looks like:
+ * Find the `<ul>` element in the code that looks like:
      <pre>
          <ul>
 			<li ng-class="{ selected: state.name == 'home' }"><a ui-sref="home">Home</a></li>
@@ -90,5 +90,5 @@ Adding a page to the main menu bar
 			<li ng-class="{ selected: state.name == 'contact' }"><a ui-sref="contact">Contact</a></li>
 		</ul>
     </pre>
- * Copy one of the existing "<li>" tags and edit the values to reflect the new page's name. If the page is not on the root level of the project, you will need to specify the full path to the page in the "state.name == 'path/to/page'" part, as well as the 'ui-sref="path/to/page"' part.
+ * Copy one of the existing `<li>` tags and edit the values to reflect the new page's name. If the page is not on the root level of the project, you will need to specify the full path to the page in the "state.name == 'path/to/page'" part, as well as the 'ui-sref="path/to/page"' part.
  * Make sure to copy over the index.html to the test and production platforms. You will need to overwrite the old one.
