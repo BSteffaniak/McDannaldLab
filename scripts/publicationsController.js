@@ -8,6 +8,12 @@ angular.module("lab").controller("PublicationsController", ["$scope", "$sce", fu
         return fuzzySearch(input, $scope.searchValue, searchColumns);
     };
     
+    $scope.filterPublications = function (pubs) {
+        return pubs.filter(function (pub) {
+            return $scope.search(pub);
+        });
+    };
+    
     $scope.publicationsFromYear = function (year) {
         return $scope.publications.filter(function (d) {
             return d.year == year;
