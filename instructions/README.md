@@ -10,7 +10,7 @@ Setting up FileZilla connection
 
 * Select the "New site" button and give it a name ![image alt text](newsite.png "New site")
 
-* In the host input field, enter "ec2-35-165-254-221.us-west-2.compute.amazonaws.com"
+* In the host input field, enter "ec2-34-221-239-5.us-west-2.compute.amazonaws.com"
 
    ![alt text](host.png "Host input field")
 
